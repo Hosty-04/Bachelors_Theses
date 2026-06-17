@@ -18,7 +18,7 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 ### Krabičky
 Systém bude obsahovat 2 krabičky. Jednu pro akumulátor a druhou (K1) pro mechaniku a elektroniku dvířek a hlavní procesor (P1). Tyto krabičky budou disponovat dírami s gumovými kabelovými průchodkami a K1 bude mít zespodu ještě navíc 2 cm trubičku pro lanko.
 
-## Kabely
+### Kabely
 Pro silové rozvody (solární panel, akumulátor, H-můstek a motor) bude použita měděná ohebná licna 1,5 mm². Pro napájení elektroniky a signálová vedení bude použita měděná ohebná licna 0,5 mm². Pro kladnou větev bude použit kabel červené barvy a na větev zápornou kabel barvy černé.
 
 ### Napájení
