@@ -98,9 +98,7 @@ Senzor INA219 bude současně využíván jako proudový senzor. P bude monitoro
 
 P bude dále prostřednictvím sběrnice I²C řídit H-můstek s nízkým klidovým proudem. H-můstek bude vybaven elektrolytickým kondenzátorem 47 µF / 25 V zapojeným co nejblíže mezi piny VM a GND, který bude potlačovat indukční napěťové špičky vznikající při vypínání motoru. Ten bude odrušen keramickým kondenzátorem 100 nF zapojeným přímo mezi jeho vývody a dvěma keramickými kondenzátory 47 nF zapojenými mezi jednotlivé vývody a kostru motoru (Faradayova klec). Všechny kondenzátory budou dimenzovány na napětí 50 V. Toto odrušení je nezbytné pro omezení jiskření kartáčků a potlačení vysokofrekvenčního elektromagnetického rušení. H-můstek i elektromotor budou umístěny v krabičce K.
 
-Stíněný kabel od tenzometru bude připojen k modulu AČ převodníku HX711 s nízkým klidovým proudem v řádu jednotek mikroampér, umístěnému v krabičce Kx. Převodník bude použit z důvodu velmi nízkého výstupního napětí tenzometru, které se pohybuje v řádu jednotek milivoltů. Stínění kabelu bude připojeno ke společné zemi za účelem odvodu šumu.
-
-Modul HX711 bude připojen k Px, který bude schopen převodník uspat a tím současně odpojit napájení tenzometru.
+Měření váhy snáškového hnízda bude zprostředkovávat tenzometr se zanedbatelnou nelinearitou a hysterezí. Stíněný kabel od tenzometru bude připojen k modulu AČ převodníku HX711 s nízkým klidovým proudem v řádu jednotek mikroampér, umístěnému v krabičce Kx. Modul bude použit z důvodu velmi nízkého výstupního napětí tenzometru, které se pohybuje v řádu jednotek milivoltů. Stínění kabelu bude připojeno ke společné zemi za účelem odvodu šumu. Převodník bude připojen k Px, který bude schopen převodník uspat a tím současně odpojit napájení tenzometru.
 
 Px bude pro komunikaci s P prostřednictvím datového kabelu typu UTP využívat sběrnici RS485. První kroucený pár bude sloužit k přenosu napájení, přičemž oba vodiče budou zapojeny paralelně. Druhý pár bude stejným způsobem použit pro propojení společné země. Třetí pár bude přenášet data prostřednictvím čipu MAX3485 s keramickým kondenzátorem 100 nF / 16 V zapojeným co nejblíže mezi piny VCC a GND. Čip bude u prototypu připájen k adaptéru SOIC-8 na DIP-8 a bude sloužit jako transceiver sběrnice RS485. Jeden čip bude před P a druhý před Px.
 
@@ -124,6 +122,21 @@ Pro vývoj budou použity vývojové desky stejného nebo podobného typu, jako 
 K hlavnímu čipu bude připojena anténa pro LoRa pásmo ve formě měděného vodiče o délce 8,2 cm (čtvrtvlnný monopól), například z běžného UTP kabelu. Anténa bude připájena přímo k desce plošných spojů a může zůstat uvnitř krabičky. Musí však být umístěna co nejdále od akumulátoru a motoru. V prostoru o poloměru 2 cm kolem antény ani pod ní se nesmí vyskytovat měď ani žádné elektronické součástky.
 
 V domě bude umístěna vývojová deska ESP32 s integrovaným LoRa modulem a anténou, která bude plnit funkci internetové brány. Veškerá data přijatá touto deskou budou následně odesílána do cloudové databáze.
+
+### Algoritmy
+#### Stavový automat pro algoritmus detekce snesených vajec
+Probuzení mikrokontroléru a převodníku HX711.  
+Čekání 500 ms na ustálení měření.  
+Odebrání 32 vzorků.  
+Výpočet mediánu.  
+Výběr 16 vzorků s nejmenší odchylkou od mediánu.  
+Výpočet aritmetického průměru a směrodatné odchylky.  
+Pokud průměr překročí 1 kg (v hnízdu je slepice), měření se zahodí.  
+Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí.  
+Každý den ve 3 hodiny ráno je při hmotnosti < 25 g provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
+Je-li měření stabilní, porovná se aktuální hmotnost s referenční hodnotou.  
+Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna zaznamenána a uložena.  
+Přechod mikrokontroléru i převodníku HX711 do režimu spánku.  
 
 ## Nákup
 
