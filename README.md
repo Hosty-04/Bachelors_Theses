@@ -18,7 +18,7 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 ### Krabičky
 Systém bude obsahovat jednu krabičku pro akumulátor o rozměrech x a tloušťce 2,4mm a druhou (K) o rozměrech x a tloušťce 1,6mm pro mechaniku a elektroniku dvířek a hlavní mikrokontrolér (P). Dále bude pro každé snáškové hnízdo určena jedna krabička (Kx) o rozměrech x a tloušťce 1,6mm.
 
-Tyto krabičky budou vytištěny na 3D tiskárně z materiálu PETG a budou disponovat prodlouženou zadní stěnou ve svislém směru s tloušťkou 3,5mm. V každém rohu této stěny budou otvory pro vruty pro upevnění krabičky ke zdi. Na krabičkách budou také směrem od horního obvodu dolů mírně zaoblené drážky ve tvaru písmene U. Tyto drážky budou sloužit pro prostrčení kabelů. Drážky s šířkou 2,5mm pro 0,5mm² kabel a drážky s šířkou 3,5mm pro 1,5mm² kabel. Pro UTP kabel bude šířka výřezu 5,5mm.
+Tyto krabičky budou vytištěny na 3D tiskárně z materiálu PETG a budou disponovat prodlouženou zadní stěnou ve svislém směru s tloušťkou 3,5mm. V každém rohu této stěny budou otvory pro vruty pro upevnění krabičky ke zdi. Na krabičkách budou také směrem od horního obvodu dolů mírně zaoblené drážky ve tvaru písmene U. Tyto drážky budou sloužit pro prostrčení kabelů. Drážky s šířkou 2,5mm pro 0,5mm² kabel a drážky s šířkou 3,5mm pro 1,5mm² kabel. Pro UTP kabel bude šířka výřezu 5,5mm. Tímto průměrem bude taktéž disponovat klasický kulovitý otvor ze spodu Kx pro stíněný kabel.
 
 Vrchní stěna (víko) bude vytištěna zvlášť s přesahem 2mm a dutou trubičkou uprostřed zadní hrany. Na horní hraně zadní stěny krabiček budou po stranách dvě takové trubičky o stejném průměru otvoru, a to 2,1mm. Těmito trubičkami bude po vytištění provlečen klasický filament o tloušťce 1,75mm, jehož konce budou krátce zahřáty zapalovačem a zatlačeny proti oběma koncům nyní již celistvé trubičky, aby vytvořily hlavičku. Takto bude vytvořen pant pro víko.
 
@@ -64,6 +64,8 @@ INA219 je také, jak jsem již zmiňoval, senzorem proudu. Této vlastnosti bude
 
 Je tedy zřejmé, že P bude taktéž řídit H-můstek (resp. čip s externími součástkami) s nízkým klidovým proudem (jednotky mikroampér), a to přes sběrnici I2C. H-můstek s elektrolytem 47µF 25V (kvůli indukčním špičkám při vypínání motorku), zapojeným těsně paralelně k pinům VM a GND, bude zase řídit elektromotorek, jenž bude odrušený 100nF keramickým kondenzátorem zapojeným těsně mezi kontakty a dvěma 47nF keramickými kondenzátory zapojenými těsně mezi kontakty a kostru (Faradayova klec). Všechny tyto kondenzátory budou dimenzované na napětí 50V. Odrušení je potřeba kvůli jiskření kartáčků a filtraci vysokofrekvenčního rušení. H-můstek i elektromotorek budou v K.
 
+Jelikož jsou vodiče od tenzometru přiliš krátké, tak budou prodlouženy stíněným kabelem typu licna. Drátky se odizolují a bude přes ně navlečena smršťovací bužírka. Poté budou spojeny pomocí pájecí bužírky a zataveny zapalovačem. Nakonec bude smršťovací bužírka přetažena přes spoje a taktéž zahřáta zapalovačem. Stínící vodič bude připojen ke společné zemi, kvůli odvodu šumu.
+
 K čipům P a Px budou na finálních deskách paralelně těsně k pinům VDDA a VSSA připojeny keramické odrušovací kondenzátory s parametry 10µF 25V a 100nF 50V, kvůli filtraci VF šumu. DPS budou mít společnou zem ze záporného pólu panelu a akumulátoru ve formě souvislé vrstvy mědi.
 
 ### Mechanika
@@ -87,7 +89,9 @@ Před pohybem dvířek se piny koncových spínačů aktivují (digitální vstu
 
 Vedlejší část systému bude umístěna u snáškových hnízd, jež budou orientována příčně ke zdi. Pod kukaní pro slepice bude pomocí vrutů přimontována březová sítotisková překližka (při vrtání nízké otáčky!) o rozměrech 37×28cm a tloušťce 12mm. Další z těchto desek, o rozměrech 35×26cm, bude základová a bude přimontována k podlaze kurníku, opět pomocí vrutů do dřeva a poslední o rozměrech 40×50cm, bude fungovat jako zádní stěna.
 
-Mezi těmito deskami bude uprostřed u zdi, kratší stranou s vodiči směrem k ní, umístěn tenzometr o tloušťce 12,7mm.
+Tyto desky budou umístěny hladkou stranou nahoru resp. směrem ke hnízdu. Řezné hrany budou zatřeny voděodolným lakem proti vlhkosti.
+
+Mezi nimi bude uprostřed u zdi, kratší stranou s vodiči směrem k ní, umístěn tenzometr o tloušťce 12,7mm. Tento tenzometr je dimenzovaný na 20kg. Maximální váha, které může být vystaven je ve formě 2 překližek, hnízda, 2 slepic a 10 vajec (2+2+1+2+2+10×0,1 = 10kg).
 
 Jeho volný konec bude upevněn dvěma inbusovými šrouby M4 nerez A2 se zápustnou hlavou. Šrouby budou procházet shora vážicí deskou skrz otvory o průměru 4,5mm a budou zapuštěny v záhlubení o průměru 10mm a hloubce 3mm. Mezi hlavou šroubu a deskou bude tenká vrstva PU tmelu.
 
@@ -95,7 +99,11 @@ Pevný konec tenzometru bude upevněn dvěma inbusovými šrouby M5 nerez A2 se 
 
 Šrouby budou dlouhé 25mm. Mezi deskami a závity tenzometru budou distanční matice o větším průměru, než má samotný šroub (M5 a M6 nerez A2) a tloušťce 4mm.
 
-Ze zbytku vážicí překližky, která bude z obchodu nařezána na rozměr 38,5×29,5cm, budou odřezány lišty. Ty budou pomocí vrutů přimontovány zespodu horní desky. Lišty budou vysoké 15mm, protože volná mezera mezi deskami je 20,7mm a celé hnízdo spolu s vážicí deskou musí levitovat s mezerou alespoň 3mm, být odsazeno od zdi a podepřeno pouze tenzometrem.
+Ze zbytku vážicí překližky, která bude z obchodu nařezána na rozměr 38,5×29,5cm, budou odřezány lišty. Ty budou pomocí vrutů přimontovány zespodu horní desky. Lišty budou vysoké 15mm, protože volná mezera mezi deskami je 20,7mm a celá horní konstrukce (hnízdo spolu s vážicí deskou) musí levitovat s mezerou alespoň 3mm a být podepřená pouze tenzometrem.
+
+Do zadní lišty bude vyvrtán otvor a ním proveden již prodloužený kabel od tenzometru (nesmí za tenzometr tahat) směrem nahoru po zdi až do Kx. Z boku krabičky bude vyveden sdělovací kabel, který povede vysoko po zdi a bude na ní upevněn pomocí hřebíkových příchytek. Tento kabel povede až do K.
+
+Ode zdi musí být celá konstrukce vzdálena tak, aby se jí nedotýkala a zůstalo za ní místo na kabel. Je taktéž nutné, aby se do tohoto prostoru nedostali slepice a jiní hlodavci.
 
 Uprostřed u košíku, naproti váze, bude vytvořen doraz pomocí inbusového šroubu M5 nerez A2 se zápustnou hlavou o délce 30mm. Šroub bude procházet zespodu základovou deskou skrz otvor o průměru 4,5mm a bude zapuštěn v záhlubení o průměru 10mm a hloubce 6mm (izolepa na vrtáku jako indikátor). Doraz bude tvořen mosaznou M5 kloboučkovou maticí kvůli nečistotám. Ideální vůle dorazu je 0,8mm (jedno otočení šroubu M5 nebo šířka kreditní karty).
 
@@ -112,7 +120,7 @@ https://konektor-kabel.cz/liycy-4x025-mm2-stineny-od-48-mm-sedy-helu
 https://www.alza.cz/alzapower-patch-cat5e-utp?dq=6592131  
 
 **Bužírky**  
-https://www.laskakit.cz/smrstovaci-pajeci-spojka--buzirka-s-cinem/ (bílá)  
+https://www.laskakit.cz/smrstovaci-pajeci-spojka--buzirka-s-cinem/ (bílé)  
   
 Electric-Hranice s.r.o.  
 
