@@ -271,7 +271,7 @@ Hornbach
 | ZENIT         | 100 Kč      |
 | LIHNEME       | 1000 Kč     |
 | MAJKL3D       | 100 Kč      |
-| DALŠÍ         | 1000 Kč     |
+| REZERVA       | 1000 Kč     |
 | **CELKEM**    | **8900 Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava.*
