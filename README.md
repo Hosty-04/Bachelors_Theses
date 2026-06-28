@@ -168,7 +168,7 @@ https://www.gme.cz/v/1513875/wago-221-2411-svorka-bezsroubova-2pol-vodic-do-4mm2
 https://www.hadex.cz/p/d626-zdirka-rj45-do-dps-8p8c (2 ks)  
 
 **Klipy**  
-Hobby market (Hornbach) (cca 20 ks)  
+Hornbach (cca 20 ks)  
 
 **Solární panel**  
 https://www.dexhal.cz/fotovoltaicky-panel-6v-1670ma-10w-solarni-clanek_z2899/ (2 ks)  
@@ -234,7 +234,7 @@ https://dratek.cz/arduino-platforma/1046-dps-adapter-sop8-so8-soic8-na-dip8.html
 https://www.gme.cz/v/1486151/hitano-ck-1u-50v-x7r-rm508-10-keramicky-kondenzator (4 ks)  
 
 **Překližka**  
-Hobby market (Hornbach) (2 ks)  
+Hornbach (2 ks)  
 
 **Červík**  
 Handy corp. Hranice / Přerov (2 ks)  
@@ -243,16 +243,16 @@ Handy corp. Hranice / Přerov (2 ks)
 https://www.majkl3d.cz/p/zavitova-vlozka-do-plastu-mosaz-m3 (2 ks)  
 
 **Lanko**  
-Hobby market (Hornbach)  
+Hornbach  
 
 **Očko**  
-Hobby market (Hornbach)  
+Hornbach  
 
 **Šrouby Matice Podložky Vruty**  
-Hobby market (Hornbach) (6, 6, 1, sada)  
+Hornbach (6, 6, 1, sada)  
 
 **PU tmel**  
-Hobby market (Hornbach)  
+Hornbach  
 
 |               |             |
 | :---:         | :---:       |
