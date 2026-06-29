@@ -13,7 +13,10 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 6. Ověřte funkčnost systému experimentálním měřením a vyhodnoťte spolehlivost detekce a ovládání.
 7. Zveřejněte veškeré výrobní podklady na vhodné platformě (např. GitHub).
 
-## Koncept
+## Schéma
+<img src="https://github.com/Hosty-04/Bachelors_Theses/blob/main/schematics/block_schematic.png" alt="block_schematic">
+
+## Popis
 
 ### Krabičky
 Systém bude obsahovat jednu krabičku pro akumulátor o rozměrech 250 × 175 × 150 mm a tloušťce stěny 2,4 mm, dále druhou krabičku (K) o rozměrech × a tloušťce stěny 1,6 mm, která bude určena pro mechaniku, elektroniku dvířek a hlavní mikrokontrolér (M). Pro každé snáškové hnízdo bude dále určena samostatná krabička (Kx) o rozměrech × a tloušťce stěny 1,6 mm. Každá tato krabička bude obsahovat vedlejší mikrokontrolér (Mx).
@@ -133,10 +136,9 @@ K hlavnímu čipu bude připojena anténa pro LoRa pásmo ve formě měděného 
 
 V domě bude umístěna vývojová deska ESP32 s integrovaným LoRa modulem a anténou, která bude plnit funkci internetové brány. Veškerá data přijatá touto deskou budou následně odesílána do cloudové databáze.
 
-<img src="https://github.com/Hosty-04/Bachelors_Theses/blob/main/schematics/block_schematic.png" alt="block_schematic">
+## Algoritmy
 
-### Algoritmy
-#### Stavový automat pro algoritmus detekce snesených vajec
+### Stavový automat pro algoritmus detekce snesených vajec
 Probuzení mikrokontroléru a převodníku HX711.  
 Čekání 500 ms na ustálení měření.  
 Odebrání 32 vzorků rychlostí 10 SPS.  
