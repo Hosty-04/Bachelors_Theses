@@ -147,9 +147,9 @@ Výběr 16 vzorků s nejmenší odchylkou od mediánu.
 Výpočet aritmetického průměru, aktuální hmotnosti (odečet referenční nulové hodnoty) a směrodatné odchylky.  
 Pokud hmotnost překročí 1 kg (v hnízdu je slepice), měření se zahodí.  
 Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí.  
-Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
 Je-li měření stabilní, aktuální hmotnost se porovná s uloženou hodnotou.  
-Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna uložena.  
+Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna aritmeticky přičtena k uložené hodnotě.  
+Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
 Přechod mikrokontroléru i převodníku HX711 do režimu spánku.  
 
 ## Nákup
