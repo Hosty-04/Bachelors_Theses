@@ -19,13 +19,97 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 ## Popis
 
 ### Krabičky
-Systém bude obsahovat jednu krabičku pro akumulátor o rozměrech 250 × 175 × 150 mm a tloušťce stěny 2,4 mm, dále druhou krabičku (K) o rozměrech × a tloušťce stěny 1,6 mm, která bude určena pro mechaniku, elektroniku dvířek a hlavní mikrokontrolér (M). Pro každé snáškové hnízdo bude dále určena samostatná krabička (Kx) o rozměrech × a tloušťce stěny 1,6 mm. Každá tato krabička bude obsahovat vedlejší mikrokontrolér (Mx).
+Systém bude obsahovat jednu krabičku pro akumulátor o rozměrech 250 × 175 × 150 mm a tloušťce stěny 2,4 mm, dále druhou krabičku (K) o rozměrech × a tloušťce stěny 1,6 mm, která bude určena pro mechaniku a elektroniku dvířek a hlavní mikrokontrolér (M). Pro každé snáškové hnízdo bude dále určena samostatná krabička (Kx) o rozměrech × a tloušťce stěny 1,6 mm. Každá tato krabička bude obsahovat potřebnou elektroniku a vedlejší mikrokontrolér (Mx).
 
 Všechny krabičky budou vytištěny na 3D tiskárně z materiálu PETG. Tento materiál byl zvolen pro vyšší houževnatost a teplotní odolnost oproti materiálu PLA. Jejich zadní stěna bude ve svislém směru prodloužena a bude mít tloušťku 3,5 mm. V každém rohu této stěny budou vytvořeny otvory pro vruty umožňující upevnění krabiček ke stěně. Zvětšená tloušťka zvyšuje tuhost při montáži. Krabičky budou mít ve stěnách naproti sobě 2 větrací otvory o průměru 1,5 cm.
 
 Dále budou na všech krabičkách vytvořeny mírně zaoblené nízké drážky ve tvaru písmene U, směřující od horní hrany směrem dolů. Tyto drážky budou sloužit k protažení kabelů. Pro speciální solární kabel budou mít šířku 6 mm a pro datový kabel 5,5 mm. Kruhový otvor umístěný na spodní straně krabičky Kx bude mít průměr taktéž 5,5 mm, určený pro průchod stíněného kabelu. V krabičce K bude zespodu otvor pro lanko o průměru 3 mm.
 
 Víko bude vytištěno samostatně s přesahem 2 mm a bude obsahovat dutou trubičku uprostřed levé hrany. Na horní hraně levé stěny každé krabičky budou po stranách na malé plošince umístěny dvě trubičky s průměrem otvoru 2,1 mm. Po vytištění bude všemi třemi trubičkami protažen filament o průměru 1,75 mm, jehož konce budou krátce nahřáty zapalovačem a roztemovány tak, aby vytvořily hlavičky. Tím vznikne jednoduchý pant pro uchycení víka. Toto řešení minimalizuje počet součástek a umožňuje výrobu celé krabičky bez dalších kovových dílů.
+
+### Kabeláž
+Pro připojení solárního panelu a akumulátoru bude využito speciálního solárního kabelu typu licna o průřezu 4 mm² a hřebíkových příchytek o průměru 6 mm. Tyto kabely budou v K přes prodlužovací WAGO svorky přetransformovány na měděnou ohebnou licnu o průřezu 1.5mm². Ta bude pomocí WAGO svorek o rozteči 5,08 mm připojena k desce plošných spojů. U prototypu bude využíváno drátků do nepájivého pole s průřezem 0.5 mm². Pro kladný pól bude použit červený vodič a pro záporný pól černý vodič.
+
+Pro datovou komunikaci byl zvolen stíněný kabel a kabel UTP CAT5e typu licna, který bude ke stěně upevněn pomocí příchytek o průměru 5 mm a konektorů RJ45. Prodloužení vodičů tenzometru zajistí přes prodlužovací WAGO svorky stíněný kabel LiYCY 4 × 0,25 mm² typu licna. Jelikož jsou vodiče od tenzometru pro WAGO svorky příliš tenké, tak se u odizolovaného konce přehnou napůl na průřez 0,28 mm². K desce plošných spojů bude potom tento kabel připojen pomocí WAGO svorek o rozteči 2,5 mm.
+
+### Napájení
+2 Solární panely o parametrech 6 V / 10 Wp budou paralelně spojeny, svisle připevněny na stěnu pod malou stříšku a orientovány směrem na jih, případně na východ nebo západ (v mém případě bude jeden panel směřovat na jihozápad a druhý na severozápad). Tím bude zajištěno, že panely budou co nejlépe využívat dostupnou sluneční energii. Vertikální montáž omezuje usazování sněhu a nečistot.
+
+Společně s bezúdržbovým olověným AGM akumulátorem o parametrech 6 V / 7 Ah, jenž bude umístěný ve stínu pod stříškou, bude zajišťovat napájení celého systému. Akumulátor LiFePO4 je sice v mnoha ohledech lepší, ale nesmí se používat v zimě. Silová část bude pracovat s napětím 6 V, zatímco veškerá elektronika bude napájena napětím 3,3 V.
+
+Snížení napětí z 6 V na 3,3 V bude realizováno pomocí nízkopříkonového LDO regulátoru. Nízký klidový proud významně prodlužuje provoz z akumulátoru. Tento stabilizátor bude zapojený k baterii a na jeho vstupu bude připojen blokovací keramický kondenzátor o kapacitě 1 µF / 50 V. Stejný kondenzátor bude připojen i na výstupu, ale v tomto případě z důvodu vyhlazení napětí. 
+
+Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti nízkopříkonových variant a velmi malého odběru systému po většinu dne. Jeho vyšší účinnost by se projevila pouze po dobu asi dvou minut denně, zatímco po zbytek dne by kvůli vlastní spotřebě dosahoval nižší celkové účinnosti než jednoduchý lineární stabilizátor.
+
+Spotřeba proudu u systému s 5 snáškovými hnízdy bude v režimu spánku pod 50 µA, v aktivním režimu pod 50 mA a při pohybu dvířek kolem 500 mA. Denní spotřeba bude kolem 12 mAh, resp. 50 mWh. Dvířka (motor) se na denní spotřebě podílí ze 40 %, hnízda taktéž ze 40 % a řídicí elektronika a LoRa po 10 %.
+
+|               |                          |                          |                                 |
+| :---          | :---:                    | :---:                    | :---:                           |
+| **Orientace** | **Letní výkon (Wh/den)** | **Zimní výkon (Wh/den)** | **Zimní bilance (mAh/den)**     |
+| **Jih**       | 70–110                   | 16–30                    | +3800 až +7500 (extrémně dobrá) |
+| **Východ**    | 50–80                    | 12–24                    | +2500 až +5000 (velmi dobrá)    |
+| **Západ**     | 50–80                    | 12–24                    | +2500 až +5000 (velmi dobrá)    |
+| **Sever**     | 16–30                    | 4–12                     | +300 až +1800 (přijatelná)      |
+
+*Poznámka: Zimní bilance počítá s efektivitou 70 %.*
+
+### Řízení
+Hlavní řídicí jednotkou systému bude mikrokontrolér STM32 s integrovaným LoRa modulem, komunikujícím na frekvenci 868 MHz. LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT není pro tento typ projektu vhodnou technologií. U každého snáškového hnízda bude umístěn další mikrokontrolér STM32.
+
+Firmware bude vyvíjen v prostředí STM32CubeIDE. Součástí firmwaru hlavní řídicí jednotky budou astronomické hodiny, podle kterých se budou automaticky otevírat a zavírat dvířka. Použití časovače nebylo zvoleno z důvodu proměnlivé délky dne. Světelný senzor by mohl způsobovat chybné sepnutí při zatažené obloze (déšť nebo bouřka) nebo ve večerních hodinách vlivem pouličního osvětlení či světlometů automobilů.
+
+Použité čipy podporují režim hlubokého spánku (Standby), který umožňuje výrazně snížit spotřebu energie. Klidový proud se v tomto režimu pohybuje v řádu jednotek mikroampér. Hlavní řídicí jednotka se bude společně s nezbytnými částmi systému probouzet každých 10 minut za účelem kontroly stavu solárního panelu a akumulátoru (stovky milisekund). Dále se bude společně s ostatními řídicími jednotkami a dalšími potřebnými částmi systému probouzet 24× denně, tedy každou hodinu, pro sekvenční kontrolu stavu vajec u každého hnízda (24 × 5 hnízd × 5 s na jedno hnízdo = cca 10 minut). Nakonec se bude probouzet ráno a večer, opět pouze s nezbytnými částmi systému, za účelem otevření a zavření dvířek (cca 2 × 20 s). Před zahájením pohybu dvířek budou piny koncových spínačů nastaveny jako digitální vstupy s interním pull-up rezistorem. Po dosažení koncové polohy budou přepnuty do analogového režimu, čímž bude eliminován jejich klidový odběr.
+
+Pro vývoj budou použity vývojové desky stejného nebo podobného typu, jako budou čipy použité na finální desce plošných spojů. Finální deska bude obsahovat čtyřpinovou lištu pro připojení programátoru z vývojové desky.
+
+K hlavnímu čipu bude připojena anténa pro LoRa pásmo ve formě měděného vodiče o délce 8,2 cm (čtvrtvlnný monopól), například z běžného UTP kabelu. Anténa bude připájena přímo k desce plošných spojů a může zůstat uvnitř krabičky. Musí však být umístěna co nejdále od akumulátoru a motoru. V prostoru o poloměru 2 cm kolem antény ani pod ní se nesmí vyskytovat měď ani žádné elektronické součástky.
+
+V domě bude umístěna vývojová deska ESP32 s integrovaným LoRa modulem a anténou, která bude plnit funkci internetové brány. Veškerá data přijatá touto deskou budou následně odesílána do cloudové databáze.
+
+### Stavový automat pro detekci snesených vajec
+Probuzení mikrokontroléru a převodníku HX711.  
+Čekání 500 ms na ustálení měření.  
+Odebrání 32 vzorků rychlostí 10 SPS.  
+Výpočet mediánu.  
+Výběr 16 vzorků s nejmenší odchylkou od mediánu.  
+Výpočet aritmetického průměru, aktuální hmotnosti (odečet referenční nulové hodnoty) a směrodatné odchylky.  
+Pokud hmotnost překročí 1 kg (v hnízdu je slepice), měření se zahodí.  
+Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí.  
+Je-li měření stabilní, aktuální hmotnost se porovná s uloženou hodnotou.  
+Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna aritmeticky přičtena k uložené hodnotě.  
+Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
+Přechod mikrokontroléru i převodníku HX711 do režimu spánku.  
+
+### Elektronika
+Prototyp bude sestaven z modulů umístěných na nepájivém poli pomocí kolíkových lišt a šroubovacích svorek, které budou obsahovat kovový plíšek pro ochranu licny. Finální verze bude obsahovat jednu hlavní desku plošných spojů a až 5 vedlejších desek pro jednotlivá snášková hnízda (v mém případě 2). Na všech deskách budou moduly nahrazeny čipy a nezbytnými externími SMD součástkami.
+
+V krabičce K bude k solárnímu panelu připojen vysokoimpedanční napěťový dělič tvořený rezistory o hodnotách 1 MΩ a 470 kΩ. Paralelně k rezistoru R2 (470 kΩ) bude připojen keramický kondenzátor o kapacitě 100 nF a jmenovitém napětí 16 V, který zajistí správnou funkci měření při takto vysoké impedanci. Dělič bude sloužit ke snímání napětí solárního panelu, přičemž naměřené hodnoty budou odesílány do M. Díky vysoké impedanci bude proudový odběr děliče pouze v řádu jednotek mikroampér.
+
+K solárnímu panelu budou sériově připojeny dva P-MOS tranzistory s nízkým RDS(on), spojené back-to-back (drainy proti sobě), které budou tvořit výkonový spínač celého systému. Jejich řízení bude realizováno jedním budicím logic-level N-MOS tranzistorem, protože napětí 3,3 V z M není dostatečné pro jejich přímé sepnutí. N-MOS tranzistor bude řízen M. Na jeho gate bude sériově připojen rezistor o hodnotě 220 Ω pro omezení proudových špiček na výstupu M. Mezi gate a společnou zem bude paralelně připojen pulldown rezistor o hodnotě 10 kΩ, který zabrání vzniku nedefinovaného logického stavu. Drain bude připojen k akumulátoru, pull-up rezistoru 10 kΩ a na gate obou P-MOS tranzistorů. P-MOS tranzistory budou tedy spínané 6 V. Source bude připojen ke společné zemi
+
+Důvodem použití dvou P-MOS tranzistorů namísto jednoho je přítomnost parazitní diody, která je nedílnou součástí jejich vnitřní struktury. Pokud by byl použit pouze jeden tranzistor, protékal by večer i při jeho rozepnutí proud z akumulátoru zpět do solárního panelu prostřednictvím této diody, což by způsobovalo samovolné vybíjení akumulátoru. Pokud nastane výpadek napájení, tak se P-MOS tranzistory automaticky zavřou.
+
+Modul proudového a napěťového senzoru INA219 bude zapojen v krabičce K mezi akumulátor a vstup H-můstku pro napájení motoru. Jeho proud se v režimu spánku pohybuje v řádu jednotek mikroampér a jednou z jeho funkcí bude snímat napětí akumulátoru.
+
+Na základě údajů z modulu INA219 a děliče napětí bude M prostřednictvím sběrnice I²C, resp. portu GPIO vyhodnocovat stav solárního panelu a akumulátoru. Mohou nastat tři situace. První možností je slunečný den, kdy bude solární panel dodávat napětí vyšší než 7,2 V a akumulátor bude plně nabitý. Druhou možností je noc, kdy panel nebude dodávat žádné napětí a dojde ke vzniku zpětného proudu směrem do panelu. Třetí možností je kritické vybití akumulátoru při poklesu napětí přibližně k hodnotě 5,4 V. V závislosti na těchto stavech M rozepne hlavní spínač nebo v případě kritického vybití vypne všechny nepotřebné části systému a přejde do co nejhlubšího režimu spánku.
+
+Senzor INA219 bude současně využíván jako proudový snímač. M bude monitorovat proud odebíraný z akumulátoru. Náhlé zvýšení proudu během pohybu dvířek bude indikovat jejich zablokování nebo náraz do překážky, například slepice. V takovém případě se M zastaví na 250 ms a pokusí se obrátit směr otáčení motoru. Pokud ani změna směru problém nevyřeší, systém se vypne a odešle zprávu o nefunkčnosti dvířek. Bude nutné brát v potaz krátkodobé proudové špičky vznikající při rozběhu motoru.
+
+M bude dále řídit H-můstek DRV8838 s nízkým klidovým proudem. H-můstek bude vybaven elektrolytickým kondenzátorem 47 µF / 25 V zapojeným co nejblíže mezi piny VM a GND, který bude potlačovat indukční napěťové špičky vznikající při vypínání motoru. Ten bude odrušen keramickým kondenzátorem 100 nF zapojeným přímo mezi jeho vývody a dvěma keramickými kondenzátory 47 nF zapojenými mezi jednotlivé vývody a kostru motoru (Faradayova klec). Všechny kondenzátory budou dimenzovány na napětí 50 V. Toto odrušení je nezbytné pro omezení jiskření kartáčků a potlačení vysokofrekvenčního elektromagnetického rušení. H-můstek i elektromotor budou umístěny v krabičce K.
+
+Měření váhy snáškového hnízda bude zprostředkovávat tenzometr se zanedbatelnou nelinearitou a hysterezí. Stíněný kabel od tenzometru bude připojen k modulu AČ převodníku HX711 s nízkým klidovým proudem v řádu jednotek mikroampér, umístěnému v krabičce Kx. Modul bude použit z důvodu zesílení velmi nízkého výstupního napětí tenzometru, které se pohybuje v řádu jednotek milivoltů. Stínění kabelu bude připojeno ke společné zemi, na desce plošných spojů, za účelem odvodu šumu. Převodník bude připojen k Mx, který bude schopen jej uspat a tím současně odpojit napájení tenzometru.
+
+Mx bude pro komunikaci s M prostřednictvím datového kabelu typu UTP využívat sběrnici RS485. První kroucený pár bude sloužit k přenosu napájení, přičemž oba vodiče budou zapojeny paralelně. Druhý pár bude stejným způsobem použit pro propojení společné země. Třetí pár bude přenášet data prostřednictvím čipu MAX3485 s keramickým kondenzátorem 100 nF / 16 V zapojeným co nejblíže mezi piny VCC a GND. Čip bude u prototypu připájen k adaptéru SOIC-8 na DIP-8 a bude sloužit jako transceiver sběrnice RS485. Jeden čip bude před M a druhý před Mx.
+
+Tento čip vytváří diferenciální signál na linkách A B, čímž zvyšuje odolnost komunikace proti elektromagnetickému rušení. Současně jej bude možné prostřednictvím Mx uvést do režimu shutdown, ve kterém bude odebírat pouze proud v řádu jednotek nanoampér. Vše od tenzometru až po čip musí být co nejblíže k sobě.
+
+Vzhledem k použití několika snáškových hnízd bude komunikace probíhat mezi jednou řídicí jednotkou M (master) a několika jednotkami Mx (slave), které budou propojeny sériově v topologii Daisy Chain. Vzhledem ke krátké délce vedení v řádu jednotek metrů nebude nutné na začátek ani konec sběrnice připojovat zakončovací rezistory o hodnotě 120 Ω pro impedanční přizpůsobení vedení. Jejich použití by pouze zvyšovalo proudový odběr systému.
+
+Sběrnice RS485 je na rozdíl od sběrnice I²C vhodná pro komunikaci na delší vzdálenosti. Pro přenos dat bude využit protokol LPUART, který nevyužívá hodinový signál a vyznačuje se nízkou spotřebou energie.
+
+Na aplikační vrstvě bude použit komunikační protokol Modbus RTU a knihovna ModbusRTU-Slave. Protokol Modbus RTU vytvoří datový rámec obsahující adresu jednotky slave, přenášená data a kontrolní součet CRC pro detekci chyb při přenosu. Hardware LPUART v mikrokontroléru následně převede jednotlivé bajty na sériový datový tok, doplní start a stop bity a zajistí jejich přenos po sběrnici. Na straně přijímače proběhne opačný proces.
+
+K čipům M a Mx budou na finálních deskách plošných spojů přímo k pinům VDD a VSS, resp. VDDA a VSSA paralelně připojeny blokovací keramické kondenzátory o kapacitách 10 µF / 25 V a 100 nF / 50 V pro filtraci vysokofrekvenčního šumu. Desky plošných spojů budou obsahovat souvislou zemní plochu připojenou k zápornému pólu solárního panelu a akumulátoru.
 
 ### Mechanika
 Hlavní část systému bude umístěna na vnější stěně kurníku, která bude splňovat požadavky na umístění solárního panelu uvedené v kapitole Napájení. Toto řešení zjednoduší montáž a zároveň z velké části eliminuje působení amoniaku ze slepičího trusu na elektroniku.
@@ -67,92 +151,6 @@ Do zadní lišty bude vyvrtán otvor, kterým bude protažen již prodloužený 
 Celá konstrukce musí být od stěny vzdálena natolik, aby se jí nikde nedotýkala a současně za ní zůstal prostor pro vedení kabelu. Zároveň je nutné zabránit přístupu slepic a hlodavců do tohoto prostoru.
 
 Uprostřed konstrukce naproti košíku bude vytvořen stavitelný doraz pomocí zápustného inbusového šroubu M5 z nerezové oceli A2 o délce 30 mm. Šroub bude procházet spodní deskou skrz otvor o průměru 4,5 mm a bude zapuštěn do záhlubení o průměru 10 mm a hloubce 6 mm. Doraz bude tvořen mosaznou kloboučkovou maticí M5 (délka 10 mm, závit 7,5 mm) z důvodu omezení ulpívání nečistot. Optimální vůle dorazu je 0,8 mm, což odpovídá jednomu otočení šroubu M5 nebo přibližně tloušťce běžné platební karty.
-
-### Kabeláž
-Pro připojení solárního panelu a akumulátoru bude využito speciálního solárního kabelu typu licna o průřezu 4 mm² a hřebíkových příchytek o průměru 6 mm. Tyto kabely budou v K přes prodlužovací WAGO svorky přetransformovány na měděnou ohebnou licnu o průřezu 1.5mm². Ta bude pomocí WAGO svorek o rozteči 5,08 mm připojena k desce plošných spojů. U prototypu bude využíváno drátků do nepájivého pole s průřezem 0.5 mm². Pro kladný pól bude použit červený vodič a pro záporný pól černý vodič.
-
-Pro datovou komunikaci byl zvolen stíněný kabel a kabel UTP CAT5e typu licna, který bude ke stěně upevněn pomocí příchytek o průměru 5 mm a konektorů RJ45. Prodloužení vodičů tenzometru zajistí přes prodlužovací WAGO svorky stíněný kabel LiYCY 4 × 0,25 mm² typu licna. Jelikož jsou vodiče od tenzometru pro WAGO svorky příliš tenké, tak se u odizolovaného konce přehnou napůl na průřez 0,28 mm². K desce plošných spojů bude potom tento kabel připojen pomocí WAGO svorek o rozteči 2,5 mm.
-
-### Napájení
-2 Solární panely o parametrech 6 V / 10 Wp budou paralelně spojeny, svisle připevněny na stěnu pod malou stříšku a orientovány směrem na jih, případně na východ nebo západ (v mém případě bude jeden panel směřovat na jihozápad a druhý na severozápad). Tím bude zajištěno, že panely budou co nejlépe využívat dostupnou sluneční energii. Vertikální montáž omezuje usazování sněhu a nečistot.
-
-Společně s bezúdržbovým olověným AGM akumulátorem o parametrech 6 V / 7 Ah, jenž bude umístěný ve stínu pod stříškou, bude zajišťovat napájení celého systému. Akumulátor LiFePO4 je sice v mnoha ohledech lepší, ale nesmí se používat v zimě. Silová část bude pracovat s napětím 6 V, zatímco veškerá elektronika bude napájena napětím 3,3 V.
-
-Snížení napětí z 6 V na 3,3 V bude realizováno pomocí nízkopříkonového LDO regulátoru. Nízký klidový proud významně prodlužuje provoz z akumulátoru. Tento stabilizátor bude zapojený k baterii a na jeho vstupu bude připojen blokovací keramický kondenzátor o kapacitě 1 µF / 50 V. Stejný kondenzátor bude připojen i na výstupu, ale v tomto případě z důvodu vyhlazení napětí. 
-
-Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti nízkopříkonových variant a velmi malého odběru systému po většinu dne. Jeho vyšší účinnost by se projevila pouze po dobu asi dvou minut denně, zatímco po zbytek dne by kvůli vlastní spotřebě dosahoval nižší celkové účinnosti než jednoduchý lineární stabilizátor.
-
-Spotřeba proudu u systému s 5 snáškovými hnízdy bude v režimu spánku pod 50 µA, v aktivním režimu pod 50 mA a při pohybu dvířek kolem 500 mA. Denní spotřeba bude kolem 12 mAh, resp. 50 mWh. Dvířka (motor) se na denní spotřebě podílí ze 40 %, hnízda taktéž ze 40 % a řídicí elektronika a LoRa po 10 %.
-
-|               |                          |                          |                                 |
-| :---          | :---:                    | :---:                    | :---:                           |
-| **Orientace** | **Letní výkon (Wh/den)** | **Zimní výkon (Wh/den)** | **Zimní bilance (mAh/den)**     |
-| **Jih**       | 70–110                   | 16–30                    | +3800 až +7500 (extrémně dobrá) |
-| **Východ**    | 50–80                    | 12–24                    | +2500 až +5000 (velmi dobrá)    |
-| **Západ**     | 50–80                    | 12–24                    | +2500 až +5000 (velmi dobrá)    |
-| **Sever**     | 16–30                    | 4–12                     | +300 až +1800 (přijatelná)      |
-
-*Poznámka: Zimní bilance počítá s efektivitou 70 %.*
-
-### Elektronika
-Prototyp bude sestaven z modulů umístěných na nepájivém poli pomocí kolíkových lišt a šroubovacích svorek, které budou obsahovat kovový plíšek pro ochranu licny. Finální verze bude obsahovat jednu hlavní desku plošných spojů a až 5 vedlejších desek pro jednotlivá snášková hnízda (v mém případě 2). Na všech deskách budou moduly nahrazeny čipy a nezbytnými externími SMD součástkami.
-
-V krabičce K bude k solárnímu panelu připojen vysokoimpedanční napěťový dělič tvořený rezistory o hodnotách 1 MΩ a 470 kΩ. Paralelně k rezistoru R2 (470 kΩ) bude připojen keramický kondenzátor o kapacitě 100 nF a jmenovitém napětí 16 V, který zajistí správnou funkci měření při takto vysoké impedanci. Dělič bude sloužit ke snímání napětí solárního panelu, přičemž naměřené hodnoty budou odesílány do M. Díky vysoké impedanci bude proudový odběr děliče pouze v řádu jednotek mikroampér.
-
-K solárnímu panelu budou sériově připojeny dva P-MOS tranzistory s nízkým RDS(on), spojené back-to-back (drainy proti sobě), které budou tvořit výkonový spínač celého systému. Jejich řízení bude realizováno jedním budicím logic-level N-MOS tranzistorem, protože napětí 3,3 V z M není dostatečné pro jejich přímé sepnutí. N-MOS tranzistor bude řízen M. Na jeho gate bude sériově připojen rezistor o hodnotě 220 Ω pro omezení proudových špiček na výstupu M. Mezi gate a společnou zem bude paralelně připojen pulldown rezistor o hodnotě 10 kΩ, který zabrání vzniku nedefinovaného logického stavu. Drain bude připojen k akumulátoru, pull-up rezistoru 10 kΩ a na gate obou P-MOS tranzistorů. P-MOS tranzistory budou tedy spínané 6 V. Source bude připojen ke společné zemi
-
-Důvodem použití dvou P-MOS tranzistorů namísto jednoho je přítomnost parazitní diody, která je nedílnou součástí jejich vnitřní struktury. Pokud by byl použit pouze jeden tranzistor, protékal by večer i při jeho rozepnutí proud z akumulátoru zpět do solárního panelu prostřednictvím této diody, což by způsobovalo samovolné vybíjení akumulátoru. Pokud nastane výpadek napájení, tak se P-MOS tranzistory automaticky zavřou.
-
-Modul proudového a napěťového senzoru INA219 bude zapojen v krabičce K mezi akumulátor a vstup H-můstku pro napájení motoru. Jeho proud se v režimu spánku pohybuje v řádu jednotek mikroampér a jednou z jeho funkcí bude snímat napětí akumulátoru.
-
-Na základě údajů z modulu INA219 a děliče napětí bude M prostřednictvím sběrnice I²C, resp. portu GPIO vyhodnocovat stav solárního panelu a akumulátoru. Mohou nastat tři situace. První možností je slunečný den, kdy bude solární panel dodávat napětí vyšší než 7,2 V a akumulátor bude plně nabitý. Druhou možností je noc, kdy panel nebude dodávat žádné napětí a dojde ke vzniku zpětného proudu směrem do panelu. Třetí možností je kritické vybití akumulátoru při poklesu napětí přibližně k hodnotě 5,4 V. V závislosti na těchto stavech M rozepne hlavní spínač nebo v případě kritického vybití vypne všechny nepotřebné části systému a přejde do co nejhlubšího režimu spánku.
-
-Senzor INA219 bude současně využíván jako proudový snímač. M bude monitorovat proud odebíraný z akumulátoru. Náhlé zvýšení proudu během pohybu dvířek bude indikovat jejich zablokování nebo náraz do překážky, například slepice. V takovém případě se M zastaví na 250 ms a pokusí se obrátit směr otáčení motoru. Pokud ani změna směru problém nevyřeší, systém se vypne a odešle zprávu o nefunkčnosti dvířek. Bude nutné brát v potaz krátkodobé proudové špičky vznikající při rozběhu motoru.
-
-M bude dále řídit H-můstek DRV8838 s nízkým klidovým proudem. H-můstek bude vybaven elektrolytickým kondenzátorem 47 µF / 25 V zapojeným co nejblíže mezi piny VM a GND, který bude potlačovat indukční napěťové špičky vznikající při vypínání motoru. Ten bude odrušen keramickým kondenzátorem 100 nF zapojeným přímo mezi jeho vývody a dvěma keramickými kondenzátory 47 nF zapojenými mezi jednotlivé vývody a kostru motoru (Faradayova klec). Všechny kondenzátory budou dimenzovány na napětí 50 V. Toto odrušení je nezbytné pro omezení jiskření kartáčků a potlačení vysokofrekvenčního elektromagnetického rušení. H-můstek i elektromotor budou umístěny v krabičce K.
-
-Měření váhy snáškového hnízda bude zprostředkovávat tenzometr se zanedbatelnou nelinearitou a hysterezí. Stíněný kabel od tenzometru bude připojen k modulu AČ převodníku HX711 s nízkým klidovým proudem v řádu jednotek mikroampér, umístěnému v krabičce Kx. Modul bude použit z důvodu zesílení velmi nízkého výstupního napětí tenzometru, které se pohybuje v řádu jednotek milivoltů. Stínění kabelu bude připojeno ke společné zemi, na desce plošných spojů, za účelem odvodu šumu. Převodník bude připojen k Mx, který bude schopen jej uspat a tím současně odpojit napájení tenzometru.
-
-Mx bude pro komunikaci s M prostřednictvím datového kabelu typu UTP využívat sběrnici RS485. První kroucený pár bude sloužit k přenosu napájení, přičemž oba vodiče budou zapojeny paralelně. Druhý pár bude stejným způsobem použit pro propojení společné země. Třetí pár bude přenášet data prostřednictvím čipu MAX3485 s keramickým kondenzátorem 100 nF / 16 V zapojeným co nejblíže mezi piny VCC a GND. Čip bude u prototypu připájen k adaptéru SOIC-8 na DIP-8 a bude sloužit jako transceiver sběrnice RS485. Jeden čip bude před M a druhý před Mx.
-
-Tento čip vytváří diferenciální signál na linkách A B, čímž zvyšuje odolnost komunikace proti elektromagnetickému rušení. Současně jej bude možné prostřednictvím Mx uvést do režimu shutdown, ve kterém bude odebírat pouze proud v řádu jednotek nanoampér. Vše od tenzometru až po čip musí být co nejblíže k sobě.
-
-Vzhledem k použití několika snáškových hnízd bude komunikace probíhat mezi jednou řídicí jednotkou M (master) a několika jednotkami Mx (slave), které budou propojeny sériově v topologii Daisy Chain. Vzhledem ke krátké délce vedení v řádu jednotek metrů nebude nutné na začátek ani konec sběrnice připojovat zakončovací rezistory o hodnotě 120 Ω pro impedanční přizpůsobení vedení. Jejich použití by pouze zvyšovalo proudový odběr systému.
-
-Sběrnice RS485 je na rozdíl od sběrnice I²C vhodná pro komunikaci na delší vzdálenosti. Pro přenos dat bude využit protokol LPUART, který nevyužívá hodinový signál a vyznačuje se nízkou spotřebou energie.
-
-Na aplikační vrstvě bude použit komunikační protokol Modbus RTU a knihovna ModbusRTU-Slave. Protokol Modbus RTU vytvoří datový rámec obsahující adresu jednotky slave, přenášená data a kontrolní součet CRC pro detekci chyb při přenosu. Hardware LPUART v mikrokontroléru následně převede jednotlivé bajty na sériový datový tok, doplní start a stop bity a zajistí jejich přenos po sběrnici. Na straně přijímače proběhne opačný proces.
-
-K čipům M a Mx budou na finálních deskách plošných spojů přímo k pinům VDD a VSS, resp. VDDA a VSSA paralelně připojeny blokovací keramické kondenzátory o kapacitách 10 µF / 25 V a 100 nF / 50 V pro filtraci vysokofrekvenčního šumu. Desky plošných spojů budou obsahovat souvislou zemní plochu připojenou k zápornému pólu solárního panelu a akumulátoru.
-
-### Řízení
-Hlavní řídicí jednotkou systému bude mikrokontrolér STM32 s integrovaným LoRa modulem, komunikujícím na frekvenci 868 MHz. LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT není pro tento typ projektu vhodnou technologií. U každého snáškového hnízda bude umístěn další mikrokontrolér STM32.
-
-Firmware bude vyvíjen v prostředí STM32CubeIDE. Součástí firmwaru hlavní řídicí jednotky budou astronomické hodiny, podle kterých se budou automaticky otevírat a zavírat dvířka. Použití časovače nebylo zvoleno z důvodu proměnlivé délky dne. Světelný senzor by mohl způsobovat chybné sepnutí při zatažené obloze (déšť nebo bouřka) nebo ve večerních hodinách vlivem pouličního osvětlení či světlometů automobilů.
-
-Použité čipy podporují režim hlubokého spánku (Standby), který umožňuje výrazně snížit spotřebu energie. Klidový proud se v tomto režimu pohybuje v řádu jednotek mikroampér. Hlavní řídicí jednotka se bude společně s nezbytnými částmi systému probouzet každých 10 minut za účelem kontroly stavu solárního panelu a akumulátoru (stovky milisekund). Dále se bude společně s ostatními řídicími jednotkami a dalšími potřebnými částmi systému probouzet 24× denně, tedy každou hodinu, pro sekvenční kontrolu stavu vajec u každého hnízda (24 × 5 hnízd × 5 s na jedno hnízdo = cca 10 minut). Nakonec se bude probouzet ráno a večer, opět pouze s nezbytnými částmi systému, za účelem otevření a zavření dvířek (cca 2 × 20 s). Před zahájením pohybu dvířek budou piny koncových spínačů nastaveny jako digitální vstupy s interním pull-up rezistorem. Po dosažení koncové polohy budou přepnuty do analogového režimu, čímž bude eliminován jejich klidový odběr.
-
-Pro vývoj budou použity vývojové desky stejného nebo podobného typu, jako budou čipy použité na finální desce plošných spojů. Finální deska bude obsahovat čtyřpinovou lištu pro připojení programátoru z vývojové desky.
-
-K hlavnímu čipu bude připojena anténa pro LoRa pásmo ve formě měděného vodiče o délce 8,2 cm (čtvrtvlnný monopól), například z běžného UTP kabelu. Anténa bude připájena přímo k desce plošných spojů a může zůstat uvnitř krabičky. Musí však být umístěna co nejdále od akumulátoru a motoru. V prostoru o poloměru 2 cm kolem antény ani pod ní se nesmí vyskytovat měď ani žádné elektronické součástky.
-
-V domě bude umístěna vývojová deska ESP32 s integrovaným LoRa modulem a anténou, která bude plnit funkci internetové brány. Veškerá data přijatá touto deskou budou následně odesílána do cloudové databáze.
-
-## Algoritmy
-
-### Stavový automat pro detekci snesených vajec
-Probuzení mikrokontroléru a převodníku HX711.  
-Čekání 500 ms na ustálení měření.  
-Odebrání 32 vzorků rychlostí 10 SPS.  
-Výpočet mediánu.  
-Výběr 16 vzorků s nejmenší odchylkou od mediánu.  
-Výpočet aritmetického průměru, aktuální hmotnosti (odečet referenční nulové hodnoty) a směrodatné odchylky.  
-Pokud hmotnost překročí 1 kg (v hnízdu je slepice), měření se zahodí.  
-Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí.  
-Je-li měření stabilní, aktuální hmotnost se porovná s uloženou hodnotou.  
-Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna aritmeticky přičtena k uložené hodnotě.  
-Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
-Přechod mikrokontroléru i převodníku HX711 do režimu spánku.  
 
 ## Nákup
 
