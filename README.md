@@ -192,9 +192,6 @@ https://www.levne-baterky.cz/Green-Cell-AGM-Baterie-6V-7Ah-d5513.htm
 **Lineární LDO regulátor**  
 https://cz.mouser.com/ProductDetail/Microchip-Technology/MCP1700-3302E-TO?qs=h7tZ5KkzNMMPEB66r2rMQw%3D%3D (2 ks)  
 
-**Brána**  
-https://www.laskakit.cz/heltec-wifi-lora-32-v3-868mhz-0-96--wifi-modul/  
-
 **Master (vývojová deska a čip)**  
 https://cz.mouser.com/ProductDetail/STMicroelectronics/NUCLEO-WL55JC1?qs=zW32dvEIR3uxo98jZ7%2FN0g%3D%3D  
 https://cz.mouser.com/ProductDetail/STMicroelectronics/STM32WLE5CCU6?qs=26oI9%252Bq63sLM90C6xjPI1g%3D%3D&utm_id=9873308831&utm_source=google&utm_medium=cpc&utm_marketing_tactic=emeacorp  
