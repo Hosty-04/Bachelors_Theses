@@ -184,13 +184,13 @@ https://www.gme.cz/v/1493257/infineon-irf4905pbf-unipolarni-tranzistor (4 ks)
 https://www.levne-baterky.cz/Green-Cell-AGM-Baterie-6V-7Ah-d5513.htm  
 
 **Lineární LDO regulátor**  
-(2 ks)  
+https://ecom.cz/eshop/detail/37332 (2 ks)  
 
 **Master**  
-
+https://botland.cz/lora-lorawan/19267-lora-e5-mini-stm32wle5jc-modul-lorawan-868-915-mhz-seeedstudio-113990939-5904422369026.html  
 
 **Slave**  
-(2 ks)  
+https://botland.cz/stm32-nucleo/18799-stm32-nucleo-l031k6-s-stm32l031k6-mcu-kompatibilni-s-arduino-nano-5904422364878.html (2 ks)  
 
 **Header**  
 https://www.laskakit.cz/dupont-40pin-2-54-mm-pinovy-pas/  
@@ -220,7 +220,7 @@ https://www.laskakit.cz/vazici-senzor-20kg-adc-modul-hx711/ (2 ks)
 https://www.laskakit.cz/ad-prevodnik-modul-24-bit-2-kanaly-hx711/ (2 ks)  
 
 **Transceiver**  
-(3 ks)  
+https://www.laskakit.cz/en/prevodnik-ttl-na-rs-485--max485/ (3 ks)  
 
 **Kondenzátor**  
 https://www.gme.cz/v/1486151/hitano-ck-1u-50v-x7r-rm508-10-keramicky-kondenzator (4 ks)  
@@ -252,13 +252,13 @@ Hornbach
 | HORNBACH      | 800 Kč      |
 | DEXHAL        | 750 Kč      |   
 | LEVNE-BATERKY | 350 Kč      |
-| MOUSER        | 2400 Kč     |
+| ECOM          | 100 Kč      |
 | LASKAKIT      | 450 Kč      |
 | DRATEK        | 300 Kč      |
 | BOTLAND       | 200 Kč      |
 | ZENIT         | 100 Kč      |
 | LIHNEME       | 1000 Kč     |
 | REZERVA       | 1000 Kč     |
-| **CELKEM**    | **8350 Kč** |
+| **CELKEM**    | **6950 Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava.*
