@@ -51,7 +51,7 @@ Spotřeba proudu u systému s 5 snáškovými hnízdy bude v režimu spánku pod
 | **Západ**     | 50–80                    | 12–24                    | +2500 až +5000 (velmi dobrá)    |
 | **Sever**     | 16–30                    | 4–12                     | +300 až +1800 (přijatelná)      |
 
-*Poznámka: Zimní bilance počítá s poklesem efektivity solárního panelu o 75 % a kapacity akumulátoru o 30 % oproti letním hodnotám*
+*Poznámka: Zimní bilance počítá s poklesem efektivity solárního panelu o 75 % a kapacity akumulátoru o 25 % oproti letním hodnotám*
 
 ### Řízení
 Hlavní řídicí jednotkou systému bude mikrořadič STM32WLE5JC LoRa-E5 mini, taktovaný na 2 MHz. Ten bude disponovat integrovaným LoRa modulem, komunikujícím přes LoRaWAN stack. LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT má taktéž vyšší spotřebu. U každého snáškového hnízda bude umístěn další mikrořadič STM32 NUCLEO-L031K6 (2 MHz). Ten má integrovaný programátor, který bude využit i pro hlavní řadič.
