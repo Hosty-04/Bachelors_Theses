@@ -54,7 +54,7 @@ Spotřeba proudu u systému s 5 snáškovými hnízdy bude v režimu spánku pod
 *Poznámka: Zimní bilance počítá s poklesem efektivity solárního panelu o 75 % a kapacity akumulátoru o 25 % oproti letním hodnotám*
 
 ### Řízení
-Hlavní řídicí jednotkou systému bude mikrořadič STM32WLE5JC LoRa-E5 mini, taktovaný na 2 MHz. Ten bude disponovat integrovaným LoRa modulem, komunikujícím přes LoRaWAN stack. LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT má taktéž vyšší spotřebu. U každého snáškového hnízda bude umístěn další mikrořadič STM32 NUCLEO-L031K6 (2 MHz). Ten má integrovaný programátor, který bude využit i pro hlavní řadič.
+Hlavní řídicí jednotkou systému bude mikrořadič STM32WLE5JC LoRa-E5 mini, taktovaný na 2 MHz. Ten bude disponovat integrovaným LoRa modulem, komunikujícím přes LoRaWAN stack (12 dBm, SF9, BW 125 kHz, CR 4 / 5, Class A neboli RX1 + RX2 a délka příjmového okna automaticky podle driftu krystalu). LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT má taktéž vyšší spotřebu. U každého snáškového hnízda bude umístěn další mikrořadič STM32 NUCLEO-L031K6 (2 MHz). Ten má integrovaný programátor, který bude využit i pro hlavní řadič.
 
 Firmware bude vyvíjen v prostředí STM32CubeIDE. Součástí firmwaru hlavní řídicí jednotky budou astronomické hodiny, podle kterých se budou automaticky otevírat a zavírat dvířka. Použití časovače nebylo zvoleno z důvodu proměnlivé délky dne. Světelný senzor by mohl způsobovat chybné sepnutí při zatažené obloze (déšť nebo bouřka) nebo ve večerních hodinách vlivem pouličního osvětlení či světlometů automobilů.
 
