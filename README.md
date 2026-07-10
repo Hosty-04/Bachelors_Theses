@@ -28,9 +28,9 @@ Dále budou na všech krabičkách vytvořeny mírně zaoblené nízké drážky
 Víko bude vytištěno samostatně s přesahem 2 mm a bude obsahovat dutou trubičku uprostřed levé hrany. Na horní hraně levé stěny každé krabičky budou po stranách na malé plošince umístěny dvě trubičky s průměrem otvoru 2,1 mm. Po vytištění bude všemi třemi trubičkami protažen filament o průměru 1,75 mm, jehož konce budou krátce nahřáty zapalovačem a roztemovány tak, aby vytvořily hlavičky. Tím vznikne jednoduchý pant pro uchycení víka. Toto řešení minimalizuje počet součástek a umožňuje výrobu celé krabičky bez dalších kovových dílů.
 
 ### Kabeláž
-Pro připojení solárního panelu a akumulátoru bude využito speciálního solárního kabelu typu licna o průřezu 4 mm² a hřebíkových příchytek o průměru 6 mm. Tyto kabely budou v K přes prodlužovací WAGO svorky přetransformovány na měděnou ohebnou licnu o průřezu 1,5 mm². Ta bude pomocí WAGO svorek o rozteči 5,08 mm připojena k desce plošných spojů. Mikrospínače budou připojeny přes měděnou ohebnou licnu o průřezu 0,5 mm². U prototypu bude využíváno rovnou měděné ohebné licny o průřezu 1,5 mm² a drátků do nepájivého pole s průřezem 0,5 mm². Pro kladný pól bude použit červený vodič a pro záporný pól černý vodič.
+Pro připojení solárního panelu a akumulátoru bude využito speciálního solárního kabelu typu licna o průřezu 4 mm² a hřebíkových příchytek o průměru 6 mm. Tyto kabely budou v K přes prodlužovací WAGO svorky přetransformovány na měděnou ohebnou licnu o průřezu 1,5 mm². Ta bude pomocí 4 pinové WAGO svorkovnice o rozteči 5,08 mm připojena k desce plošných spojů a odtamtud povede do akumulátoru. Mikrospínače budou připojeny k desce plošných spojů přes měděnou ohebnou licnu o průřezu 0,5 mm² pomocí další 4 pinové WAGO svorkovnice s roztečí 5,08 mm. U prototypu bude využíváno rovnou měděné ohebné licny o průřezu 1,5 mm² a drátků do nepájivého pole s průřezem 0,5 mm². Pro kladný pól bude použit červený vodič a pro záporný pól černý vodič.
 
-Pro datovou komunikaci byl zvolen kabel UTP CAT5e typu licna, který bude ke stěně upevněn pomocí příchytek o průměru 5 mm a přes konektory RJ45 vložen do krabiček. Prodloužení vodičů tenzometru zajistí přes prodlužovací WAGO svorky stíněný kabel LiYCY 4 × 0,25 mm² typu licna. Jelikož jsou vodiče od tenzometru o průřezu 0,14 mm² pro WAGO svorky příliš tenké (povolený průřez je 0,2 - 4 mm²), tak se u odizolovaného konce přehnou napůl na průřez 0,28 mm². K desce plošných spojů bude potom tento kabel spolu se stíněním připojen pomocí 5 pinových WAGO svorek o rozteči 2,5 mm.
+Pro datovou komunikaci byl zvolen kabel UTP CAT5e typu licna, který bude ke stěně upevněn pomocí příchytek o průměru 5 mm a přes konektory RJ45 vložen do krabiček. Prodloužení vodičů tenzometru zajistí přes prodlužovací WAGO svorky stíněný kabel LiYCY 4 × 0,25 mm² typu licna. Jelikož jsou vodiče od tenzometru o průřezu 0,14 mm² pro WAGO svorky příliš tenké (povolený průřez je 0,2 - 4 mm²), tak se u odizolovaného konce přehnou napůl na průřez 0,28 mm². K desce plošných spojů bude potom tento kabel spolu se stíněním připojen pomocí 5 pinové WAGO svorkovnice o rozteči 2,5 mm.
 
 ### Napájení
 2 Solární panely o parametrech 6 V / 10 Wp budou paralelně spojeny, svisle připevněny na stěnu pod malou stříšku a orientovány směrem na jih, případně na východ nebo západ (v mém případě bude jeden panel směřovat na jihozápad a druhý na severozápad). Tím bude zajištěno, že panely budou co nejlépe využívat dostupnou sluneční energii. Vertikální montáž omezuje usazování sněhu a nečistot.
@@ -175,7 +175,7 @@ https://www.alza.cz/alzapower-patch-cat5e-utp?dq=6592131 (5 m)
 Willmann Elektro Lipník (5 m)  
 
 **Svorkovnice a svorky**  
-https://www.gme.cz/v/1501431/wago-256-402-svorkovnice-2pol-roztec-508mm-24a-320v-vstup-45-pruzina (4 ks)  
+https://www.gme.cz/v/1499112/wago-256-404-svorkovnice-4pol-roztec-508mm-24a-320v-vstup-45-pruzina (2 ks)  
 https://www.gme.cz/v/1502753/wago-250-405-svorkovnice-5pol-roztec-25mm-4a-160v-vstup-45-pruzina  
 https://www.gme.cz/v/1513875/wago-221-2411-svorka-bezsroubova-2pol-vodic-do-4mm2 (8 ks)  
 
