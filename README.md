@@ -60,6 +60,14 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 
 *Poznámka: Ostatní části systému jsou odpojovány přes tranzistorové spínače.*
 
+### Kontrola panelu a baterie (co 10 minut 300 ms)
+
+| Komponenta | Proud (typ/max) | mAh/den (typ/max) |
+|---|---|---|
+| M (LPRun @ 1 MHz) | 120 / 380 µA | 0,016 / 0,0507 |
+| INA219 aktivní | 0,7 / 1 mA | 0,0084 / 0,0120 |
+| **CELKEM** | **0,82 / 1,38 mA** | **0,00984 / 0,0136 mAh/den** |
+
 ### Pohyb dvířek (40 sekund)
 
 | Komponenta | Proud (typ/max) | mAh/den (typ/max) |
@@ -68,7 +76,7 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 | DRV8838 | 340 / 600 µA | 0,00378 / 0,00667 |
 | M (LPRun @ 1 MHz) | 120 / 380 µA | 0,016 / 0,0507 |
 | INA219 | 0,7 / 1 mA | 0,0078 / 0,0111 |
-| **CELKEM** | 151 / 202 mA | **1,67 / 2,24 mAh/den** |
+| **CELKEM** | **151 / 202 mA** | **1,67 / 2,24 mAh/den** |
 
 ### Kontrola vajec (8 minut)
 
@@ -90,14 +98,6 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 | Rádio RX (SMPS) | 4,8 mA (jednotná hodnota) | 200 ms | 52 | – | Zadáno |
 | CPU (LPSleep během RX) | 35,5 / 60,0 µA | 200 ms | 52 | – | Ověřeno (STM32WLE5 datasheet, Table 42) |
 | **CELKEM (rádio+CPU)** | 4,8355 / 4,860 mA | | | **~0,0140 / 0,0140 mAh/den** | |
-
-### Tabulka 5 – Kontrola panelu a baterie (144×/den)
-
-| Komponenta | Proud (pokoj/max) | Doba/den | mAh/den (pokoj/max) | Zdroj |
-|---|---|---|---|---|
-| M – core (LPRun @ 1 MHz) | 190 / 245 µA | 43,2 s | 0,0023 / 0,0029 | Zadáno |
-| INA219 aktivní | 0,7 / 1 mA | 43,2 s | 0,0084 / 0,0120 | Ověřeno |
-| **CELKEM** | | | **~0,0107 / 0,0149 mAh/den** | |
 
 ### Tabulka 6 – LoRa TX (SMPS mód)
 
