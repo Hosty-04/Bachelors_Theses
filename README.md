@@ -244,7 +244,7 @@ https://www.laskakit.cz/vazici-senzor-20kg-adc-modul-hx711/ (2 ks)
 https://www.laskakit.cz/ad-prevodnik-modul-24-bit-2-kanaly-hx711/ (2 ks)  
 
 **Transceiver**  
-https://www.laskakit.cz/en/prevodnik-ttl-na-rs-485--max485/ (3 ks)  
+https://www.soselectronic.com/cz-cz/products/maxim/max3485esa-1-121397?query=max3485 (3 ks)  
 
 **Adaptér**  
 https://dratek.cz/arduino-platforma/1046-dps-adapter-sop8-so8-soic8-na-dip8.html (3ks)  
@@ -278,14 +278,15 @@ Hornbach
 | HADEX         | 200 Kč      |
 | HORNBACH      | 800 Kč      |
 | DEXHAL        | 750 Kč      |   
-| LEVNE-BATERKY | 350 Kč      |
+| BATERKY       | 350 Kč      |
 | ECOM          | 100 Kč      |
 | LASKAKIT      | 600 Kč      |
 | DRATEK        | 300 Kč      |
 | BOTLAND       | 1800 Kč     |
 | ZENIT         | 100 Kč      |
 | LIHNEME       | 1000 Kč     |
-| REZERVA       | 1000 Kč     |
-| **CELKEM**    | **8900 Kč** |
+| SOS           | 450 Kč      |
+| REZERVA       | 500 Kč      |
+| **CELKEM**    | **8950 Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava.*
