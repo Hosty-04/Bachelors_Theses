@@ -2,16 +2,16 @@
 Systém pro automatizaci kurníku s detekcí snesených vajec
 
 ## Zadání
-1. Prostudujte možnosti automatizace uzavírání kurníku, možné metody detekce snesených vajec a dostupné možnosti komunikace a připojení zařízení do IoT sítě (např. NB-IoT, WiFi, LoRaWAN).
-2. Navrhněte systém pro automatické otevírání a uzavírání dvířek kurníku s možností rozšíření o jednotky se senzory ve snáškových hnízdech (min. 5 hnízd). Prostudujte možnosti napájení z akumulátoru nebo
+- Prostudujte možnosti automatizace uzavírání kurníku, možné metody detekce snesených vajec a dostupné možnosti komunikace a připojení zařízení do IoT sítě (např. NB-IoT, WiFi, LoRaWAN).
+- Navrhněte systém pro automatické otevírání a uzavírání dvířek kurníku s možností rozšíření o jednotky se senzory ve snáškových hnízdech (min. 5 hnízd). Prostudujte možnosti napájení z akumulátoru nebo
    fotovoltaického panelu. Proveďte analýzu možnosti přenosu dat do cloudu a jejich zobrazení uživateli včetně historie snášek a možnosti vzdáleného ovládání, například skrze aplikaci.
-3. Na základě analýzy navrhněte způsob vzdálené uživatelské interakce pro zobrazení stavu dvířek, manuální ovládání a počítání snesených vajec.
-4. Navrhněte schéma zařízení, které bude obsahovat mikrokontrolér, komunikační modul, senzory, řízení dvířek, napájecí/nabíjecí obvody. Dbejte na nízký příkon celého zařízení. Proveďte návrh desky plošných
+- Na základě analýzy navrhněte způsob vzdálené uživatelské interakce pro zobrazení stavu dvířek, manuální ovládání a počítání snesených vajec.
+- Navrhněte schéma zařízení, které bude obsahovat mikrokontrolér, komunikační modul, senzory, řízení dvířek, napájecí/nabíjecí obvody. Dbejte na nízký příkon celého zařízení. Proveďte návrh desky plošných
    spojů.
-5. Zkonstruujte hardwarovou realizaci navrženého systému. Osaďte a zprovozněte řídicí elektroniku. Vytvořte ovládací firmware. Realizujte přenos dat ze zařízení k uživateli včetně ovládacího rozhraní a
+- Zkonstruujte hardwarovou realizaci navrženého systému. Osaďte a zprovozněte řídicí elektroniku. Vytvořte ovládací firmware. Realizujte přenos dat ze zařízení k uživateli včetně ovládacího rozhraní a
    možnosti zobrazení historie.
-6. Ověřte funkčnost systému experimentálním měřením a vyhodnoťte spolehlivost detekce a ovládání.
-7. Zveřejněte veškeré výrobní podklady na vhodné platformě (např. GitHub).
+- Ověřte funkčnost systému experimentálním měřením a vyhodnoťte spolehlivost detekce a ovládání.
+- Zveřejněte veškeré výrobní podklady na vhodné platformě (např. GitHub).
 
 ## Schéma
 <img src="https://github.com/Hosty-04/Bachelors_Theses/blob/main/schematics/block_schematic.png" alt="block_schematic">
@@ -43,15 +43,15 @@ Prodloužení vodičů tenzometru zajistí přes prodlužovací WAGO svorky stí
 Oplet tohoto kabelu, ve formě pocínovaných měděných drátků, bude izolován pomocí smršťovací bužírky s poměrem 2:1 a vnitřním průměrem před / po zahřátí 4 mm / 1,75 mm. Je potřeba oddělit odmotaný oplet, spletený do drátku, od zbylých 4 vodičů a bužírku navléknout až ke kořenu. Přes celý kabel bude potom přetáhnuta bužírka 2:1 7,5 mm / 3,5 mm, která bude přečnívat asi centimetr přes hlavní izolaci.
 
 ### Napájení
-Napájení celého systému bude zajišťovat solární panel o parametrech 9 V / 10 W, který bude svisle připevněný na stěnu a orientovaný směrem na jih, případně na východ nebo západ (v mém případě bude panel směřovat na jihozápad). Tím bude zajištěno, že panel bude co nejlépe využívat dostupnou sluneční energii. Vertikální montáž omezuje usazování sněhu a nečistot. Dalším článkem napájení bude bezúdržbový olověný AGM akumulátor o parametrech 6 V / 4 Ah, umístěný venku ve stínu asi 25 cm pod stříškou. 
+Výrobu energie bude zajišťovat solární panel o parametrech 9 V / 10 Wp, který bude svisle připevněný na stěnu a orientovaný směrem na jih, případně na východ nebo západ (v mém případě bude panel směřovat na jihozápad). Tím bude zajištěno, že panel bude co nejlépe využívat dostupnou sluneční energii. Vertikální montáž omezuje usazování sněhu a nečistot. Tento solární panel byl zvolen, protože při použití jednoduchého MOSFET odpojovače poskytuje vhodný poměr mezi napěťovou rezervou pro nabíjení 6 V akumulátoru a dostupným nabíjecím proudem. Vyšší výkon panelu zároveň zvyšuje energetickou rezervu systému v zimním období při nízké intenzitě slunečního záření.
 
-Mezi nimi se bude nacházet nízkopříkonový mikrořadičem řízený MOSFET odpojovač fotovoltaického zdroje s ochranou akumulátoru. Použití MPPT regulátoru nebylo zvoleno z důvodu vyšší složitosti a vlastní spotřeby spínaného měniče. U systému s velmi nízkým denním odběrem by zlepšení účinnosti při nabíjení pouze několik minut denně nepřineslo významný energetický přínos oproti jednoduchému MOSFET odpojovači s téměř nulovou klidovou spotřebou.
+Systém bude napájen přes bezúdržbový olověný AGM akumulátor o parametrech 6 V / 4 Ah, umístěný venku ve stínu asi 25 cm pod stříškou. I při zohlednění poklesu kapacity v zimním období o 30 % představuje energetická rezerva akumulátoru několik stovek dní provozu. V praxi bude provozní dobu více než spotřeba systému omezovat několik týdnů špatného počasí zároveň se samovybíjením a přirozené stárnutí akumulátoru. Akumulátor LiFePO4 je sice v mnoha ohledech lepší než olověný, ale nesmí se nabíjet v zimě pod 0 °C a potřebuje složitější nabíjecí systém.
 
-Akumulátor LiFePO4 je sice v mnoha ohledech lepší než olověný, ale nesmí se nabíjet v zimě pod 0 °C a potřebuje složitější nabíjecí systém.
+Před akumulátorem se bude nacházet nízkopříkonový jednoduchý mikrořadičem řízený MOSFET odpojovač fotovoltaického zdroje s ochranou akumulátoru. Použití MPPT regulátoru nebylo zvoleno z důvodu vyšší složitosti a vlastní spotřeby spínaného měniče. U systému s velmi nízkým denním odběrem by zlepšení účinnosti při nabíjení pouze několik minut denně nepřineslo významný energetický přínos oproti jednoduchému MOSFET odpojovači s téměř nulovou klidovou spotřebou.
 
 Silová část bude pracovat s napětím 6 V, zatímco veškerá elektronika bude napájena napětím 3,3 V.
 
-Snížení napětí z 6 V na 3,3 V bude realizováno pomocí nízkopříkonového LDO regulátoru MCP1700. Nízký klidový proud významně prodlužuje provoz z akumulátoru. Tento stabilizátor bude zapojený k baterii a na jeho vstupu bude připojen blokovací keramický kondenzátor o parametrech 1 µF / 50 V. Stejný kondenzátor bude připojen i na výstupu, ale v tomto případě z důvodu vyhlazení napětí. 
+Snížení napětí z 6 V na 3,3 V bude realizováno pomocí nízkopříkonového LDO regulátoru MCP1700. Nízký klidový proud významně prodlužuje provoz z akumulátoru. Tento stabilizátor bude zapojený k akumulátoru a na jeho vstupu bude připojen blokovací keramický kondenzátor o parametrech 1 µF / 50 V. Stejný kondenzátor bude připojen i na výstupu, ale v tomto případě z důvodu vyhlazení napětí. 
 
 Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti nízkopříkonových variant a velmi malého odběru systému po většinu dne. Jeho vyšší účinnost by se projevila pouze po dobu několika minut denně, zatímco po zbytek dne by kvůli vlastní spotřebě dosahoval nižší celkové účinnosti než jednoduchý lineární stabilizátor.
 
@@ -143,27 +143,14 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 
 ### Energetická bilance
 
-| Orientace panelu | Léto (typ) | Léto (max) | Zima (typ) | Zima (max) | Hodnocení |
-|---|---|---|---|---|---|
-| Jih | +4200 mAh | +4200 mAh | +730 mAh | +730 mAh | Velká rezerva, nejlepší varianta |
-| Východ | +3200 mAh | +3200 mAh | +530 mAh | +530 mAh | Bez problémů provozní varianta |
-| Západ | +3200 mAh | +3200 mAh | +530 mAh | +530 mAh | Bez problémů provozní varianta |
-| Jihozápad | +3700 mAh | +3700 mAh | +630 mAh | +630 mAh | Vhodná instalace |
+| Orientace panelu | Léto | Zima | Hodnocení |
+|---|---|---|---|
+| Jih | +4200 mAh | +730 mAh | Doporučená orientace, velmi vysoká energetická rezerva |
+| Východ | +3200 mAh | +530 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
+| Západ | +3200 mAh | +530 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
+| Jihozápad | +3700 mAh | +630 mAh | Spolehlivý celoroční provoz, pouze mírně nižší výroba než při orientaci na jih |
 
-### Kapacita akumulátoru
-
-| | Léto | Zima |
-|---|---|---|
-| Kapacita baterie | 4 Ah / 24 Wh | 3 Ah / 18 Wh |
-
-**Předpoklady pro poslední 3 tabulky:**
-- panel: 9 V / 10 W
-- jednoduchý MOSFETový odpojovač bez MPPT
-- baterie: AGM 6 V / 4 Ah
-- započteny ztráty odpojovače, neideální pracovní bod panelu, horší zimní podmínky, samovybíjení a stárnutí baterie
-- instalace: svislá plocha, Česká Republika
-
-Daný solární panel byl zvolen, protože při použití jednoduchého MOSFETového odpojovače poskytuje vhodný poměr mezi napěťovou rezervou pro nabíjení 6V AGM akumulátoru a dostupným nabíjecím proudem. Vyšší výkon panelu zároveň zvyšuje energetickou rezervu systému v zimním období při nízké intenzitě slunečního záření. Co se týče akumulátoru, tak i při zohlednění poklesu kapacity v zimním období představuje jeho energetická rezerva několik stovek dní provozu. V praxi bude provozní dobu více než spotřeba systému omezovat několik týdnů špatného počasí zároveň se samovybíjením a přirozené stárnutí akumulátoru.
+*Poznámka: Do posledních 2 tabulek byly započteny ztráty neideálního pracovního bodu solárního panelu a jednoduchého regulátoru, přibližná nabíjecí účinnost akumulátoru, samovybíjení a běžné klimatické podmínky v ČR.*
 
 ### Řízení
 Hlavní řídicí jednotkou systému bude mikrořadič STM32WLE5JC LoRa-E5 mini. Ten bude disponovat integrovaným LoRa modulem, komunikujícím přes LoRaWAN stack. Kvůli zamezení rušení při komunikaci bude řadič umístěn na opačné straně než motor. LoRa modul umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie. NB-IoT má taktéž vyšší spotřebu. U každého snáškového hnízda bude umístěn další mikrořadič STM32 NUCLEO-L031K6. Ten má integrovaný programátor, který bude využit i pro hlavní řadič.
@@ -181,18 +168,18 @@ Data budou z kurníku odesílána pomocí 3+ bajtů. První bajt bude obsahovat 
 Pro přenos dat mezi hlavní řídicí jednotkou a ostatními řídicími jednotkami bude využit protokol LPUART, který nevyužívá hodinový signál a vyznačuje se nízkou spotřebou energie. Přenosová rychlost bude 9600 Bd, kvůli minimalizaci odrazů. Na aplikační vrstvě bude použit komunikační protokol Modbus RTU a knihovna ModbusRTU-Slave. Protokol Modbus RTU vytvoří datový rámec obsahující adresu jednotky slave, přenášená data a kontrolní součet CRC pro detekci chyb při přenosu. LPUART, hardware v řadiči, následně převede jednotlivé bajty na sériový datový tok, doplní start a stop bity a zajistí jejich přenos po sběrnici. Na straně přijímače proběhne opačný proces.
 
 **Stavový automat pro algoritmus detekce snesených vajec**  
-Probuzení mikrořadiče.  
-Čekání 500 ms na ustálení měření.  
-Odebrání 32 vzorků rychlostí 10 SPS.  
-Výpočet mediánu.  
-Výběr 16 vzorků s nejmenší odchylkou od mediánu.  
-Výpočet aritmetického průměru, aktuální hmotnosti (odečet referenční nulové hodnoty) a směrodatné odchylky.  
-Pokud hmotnost překročí 1 kg (v hnízdu je slepice), měření se zahodí.  
-Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí.  
-Je-li měření stabilní, aktuální hmotnost se porovná s uloženou hodnotou.  
-Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna aritmeticky přičtena k uložené hodnotě.  
-Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota.  
-Uspání mikrořadiče.  
+- Probuzení mikrořadiče  
+- Čekání 500 ms na ustálení měření  
+- Odebrání 32 vzorků rychlostí 10 SPS  
+- Výpočet mediánu  
+- Výběr 16 vzorků s nejmenší odchylkou od mediánu  
+- Výpočet aritmetického průměru, aktuální hmotnosti (odečet referenční nulové hodnoty) a směrodatné odchylky  
+- Pokud hmotnost překročí 1 kg (v hnízdu je slepice), měření se zahodí  
+- Pokud odchylka překročí stanovený práh (pohyb slepice, vibrace), měření se zahodí  
+- Je-li měření stabilní, aktuální hmotnost se porovná s uloženou hodnotou  
+- Odpovídá-li rozdíl hmotnosti přibližné hmotnosti jednoho (60 g) nebo více vajec, je změna aritmeticky přičtena k uložené hodnotě  
+- Při hmotnosti < 25 g je provedena kontrola driftu. Pokud jsou zaznamenána tři po sobě jdoucí stabilní měření, je aktualizována referenční nulová hodnota  
+- Uspání mikrořadiče  
 
 Většinu dne bude hlavní řídicí jednotka v režimu Stop2 s RTC. Tento režim se vyznačuje velmi nízkou spotřebou a na rozdíl od režimu StandBy s RTC má mimo jiné možnost udržet logické úrovně a nastavení pinů. Řadič je automaticky taktovaný externím krystalem LSE, umístěným na LoRa-E5 mini, na 32 kHz. Když ale RTC hodiny zavelí, že je čas na práci, tak se řadič přepne do režimu LPRun (Low Power Run). V tomto režimu je taktovaný interním krystalem LSI na 1 MHz. V průběhu LoRa přenosu (Radio TX / RX) se CPU přepne do LPSleep režimu (LSI, 1 MHz). Kvůli nízké taktovací frekvenci je potřeba v souboru lorawan_conf.h zvýšit RADIO_WAKEUP_TIME z 2 na 5 ms. Rádio poběží automaticky na 32 MHz.
 
@@ -215,7 +202,7 @@ Důvodem použití dvou P-MOS tranzistorů namísto jednoho je přítomnost para
 
 Modul proudového a napěťového senzoru INA219 bude spolu s vyrovnávacím keramickým kondenzátorem o parametrech 100 nF / 50 V, co nejblíže paralelně zapojeným mezi piny Vin+ a GND, zapojen v krabičce K mezi akumulátor a vstup VM pro napájení motoru u H-bridge. Jednou z jeho funkcí bude s 12bitovým rozlišením a průměrováním ze 128 vzorků snímat napětí akumulátoru.
 
-Na základě údajů z modulu INA219 a děliče napětí bude M prostřednictvím sběrnice I²C, resp. portu GPIO vyhodnocovat stav akumulátoru a solárního panelu. Ochranu proti přepětí M zajistí přes regulaci s hysterezí. Pokud bude napětí na akumulátoru limitní, tedy v létě 7,2 V, na jaře / podzim 7,3 V a v zimě 7,5 V, M odpojí solární panel. Jestli napětí akumulátoru klesne o 0,25 V, tak M solární panel znovu připojí. Při kritickém vybití akumulátoru, kdy jeho napětí dosáhne hodnoty 5,75 V, bude M pouze kontrolovat napětí na panelu a baterii. Jakmile se  Pro probuzení je potřeba mikrořadiče resetovat. V noci, kdy panel nebude dodávat žádné napětí, musí M zamezit vzniku zpětného proudu směrem do panelu. To udělá odpojením solárního panelu.
+Na základě údajů z modulu INA219 a děliče napětí bude M prostřednictvím sběrnice I²C, resp. portu GPIO vyhodnocovat stav akumulátoru a solárního panelu. Při kritickém vybití akumulátoru, kdy jeho napětí klesne na hodnotu 5,75 V, bude M pouze kontrolovat napětí na panelu a baterii. V noci, kdy panel nebude dodávat žádné napětí, musí M zamezit vzniku zpětného proudu směrem do panelu. To udělá odpojením solárního panelu.
 
 Senzor INA219 bude současně využíván jako proudový snímač s 12bitovým rozlišením a průměrováním ze 4 vzorků. M bude monitorovat proud odebíraný z akumulátoru. Náhlé zvýšení proudu během pohybu dvířek nad 225 mA u 3 vzorků po sobě bude indikovat jejich zablokování nebo náraz do překážky, například slepice. V takovém případě se M zastaví na 250 ms, pokusí se obrátit směr otáčení motoru, dvířka vrátí zpět do původní polohy, uspí se a po 10 minutách to zkusí znovu. Pokud ani zpětný chod problém nevyřeší, systém se vypne. Bude nutné ignorovat krátkodobé proudové špičky vznikající při rozběhu motoru, trvající asi 150 ms. Takto bude zabráněno poškození systému.
 
