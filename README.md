@@ -125,8 +125,8 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 | LoRa TX | 17,5 µAh | 0,6 % | 17,6 µAh | 0,4 % |
 | LoRa RX | 13,4 µAh | 0,5 % | 13,5 µAh | 0,3 % |
 | Kontrola panelu / baterie | 11 µAh | 0,4 % | 14,6 µAh | 0,3 % |
-| **Celkem (mAh)** | **2,75** | 100 % | **4,81** | 100 % |
-| **Celkem (mWh)** | **15,6** | 100 % | **21,9** | 100 % |
+| **Celkem (mAh)** | **2,75 mAh** | 100 % | **4,81 mAh** | 100 % |
+| **Celkem (mWh)** | **15,6 mWh** | 100 % | **21,9 mWh** | 100 % |
 
 ### Výroba energie
 
