@@ -138,7 +138,7 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 
 | Orientace panelu | Léto | Zima | Hodnocení |
 |---|---|---|---|
-| Jih | +4200 mAh | +730 mAh | Doporučená orientace, velmi vysoká energetická rezerva |
+| Jih | +4200 mAh | +730 mAh | Velmi vysoká energetická rezerva |
 | Východ | +3200 mAh | +530 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
 | Západ | +3200 mAh | +530 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
 | Jihozápad | +3700 mAh | +630 mAh | Spolehlivý celoroční provoz, pouze mírně nižší výroba než při orientaci na jih |
