@@ -226,7 +226,7 @@ Na stěnu budou pomocí vrutů do dřeva připevněny svislé dřevěné hranolk
 
 V těchto profilech se budou ve svislém směru pohybovat bílá pěněná PVC dvířka o rozměrech 24 × 35 cm a tloušťce 8 mm (pozor na tolerance). Při vrtání otvorů do PVC bude nutné použít nízké otáčky a nevyvíjet nadměrný přítlak. Pěněné PVC bylo zvoleno díky nízké hmotnosti, odolnosti proti vlhkosti a snadné obrobitelnosti.
 
-Na horní části přední strany dvířek bude umístěno závěsné očko M5 z nerezové oceli A2, upevněné pomocí zapuštěné podložky a matice stejného typu. Očko bude procházet otvorem o stejném průměru, jako je jeho metrický závit. Podložka i matice budou zapuštěny do záhlubení o průměru 10 mm a hloubce 3 mm.
+Na horní části přední strany dvířek bude umístěno závěsné očko M5 z nerezové oceli A2, upevněné pomocí podložky a samojistné matice stejného typu. Očko bude procházet otvorem o stejném průměru, jako je jeho metrický závit.
 
 Očkem bude protaženo syntetické lanko (zednická stavební šňůra) o průměru 2 mm, které bude zajištěno dračí smyčkou zakápnutou vteřinovým lepidlem. Syntetická šňůra nekoroduje, má nízkou průtažnost a je odolná vůči vlhkosti.
 
@@ -234,7 +234,7 @@ Lanko povede kolmo vzhůru do krabičky K, ve které bude navinuto na špulku vy
 
 Špulka bude opatřena otvorem s D-profilem o průměru 3 mm a pomocí stavěcího šroubu (červíku) M5 z nerezové oceli A4 o délce 6 mm a mosazné závitové vložky M5 (délka 5,8 mm, průměr 7,1 mm) bude upevněna na hřídeli nízkootáčkového stejnosměrného motoru s kovovou převodovkou (6 V), a to ze strany, kde bude vstupovat lanko.
 
-Otvor pro mosaznou závitovou vložku bude mít průměr 8 mm a v posledních 6,5 mm směrem ke hřídeli se zúží na průměr 6,5 mm. Do otvoru bude zavedena vložka pomocí dlouhého 15 mm šroubu M5. Jakmile vložka narazí na zúženou část otvoru, bude hlava šroubu nahřáta mikropájkou. Plast se v místě zúžení roztaví, což umožní zalisování vložky. Po odejmutí pájky plast opět ztuhne a vložku pevně ukotví.
+Otvor pro mosaznou závitovou vložku bude mít průměr 8 mm a v posledních 6,5 mm směrem ke hřídeli se zúží na průměr 6,5 mm. Do otvoru bude zavedena vložka pomocí 16 mm šroubu M5. Jakmile vložka narazí na zúženou část otvoru, bude hlava šroubu nahřáta mikropájkou. Plast se v místě zúžení roztaví, což umožní zalisování vložky. Po odejmutí pájky plast opět ztuhne a vložku pevně ukotví.
 
 V horní i dolní části hranolku budou ve svislé ose zapuštěny dva pákové koncové mikrospínače. Záhlubení široká 6,5 mm a vysoká 20 mm povedou skrz hranolek a 10 mm širokou hliníkovou drážku, kvůli vývodu pinů. Mikrospínače budou upevněny pomocí vrutů o průměru 2 mm. Je důležité otvory předvrtat, kvůli deformaci plastu při vrtání do dřeva.
 
@@ -248,9 +248,7 @@ Mezi horní a spodní překližkou bude u stěny umístěn tenzometr o tloušťc
 
 Optická závora není pro počítání vajec v kurníku vhodná mimo jiné z důvodu výskytu prachu, peří, podestýlky a zvědavých slepic. Všechny tyto objekty by mohly přerušit laserový paprsek a být chybně vyhodnoceny jako propadnuté vejce. Z tohoto důvodu byl pro detekci vajec zvolen tenzometr.
 
-Volný konec tenzometru bude upevněn dvěma zápustnými imbusovými šrouby M4 z nerezové oceli A2. Šrouby budou procházet vážicí deskou skrz otvory o průměru 4,5 mm a budou zapuštěny do záhlubení o průměru 10 mm a hloubce 3 mm. Hlava šroubu bude zalita akrylovým tmelem.
-
-Pevný konec tenzometru bude upevněn taktéž dvěma zápustnými imbusovými šrouby M5 z nerezové oceli A2. Ty budou procházet základovou deskou skrz otvory o průměru 5,5 mm a budou rovněž zapuštěny do záhlubení o průměru 10 mm a hloubce 3 mm.
+Volný i pevný konec tenzometru bude upevněn dvěma zápustnými imbusovými šrouby M5 z nerezové oceli A2. Šrouby budou procházet vážicí deskou skrz otvory o průměru 4,5 mm a budou zapuštěny do záhlubení o průměru 10 mm a hloubce 3 mm. Hlava šroubu bude zalita akrylovým tmelem.
 
 Použité šrouby budou mít délku 25 mm. Mezi deskami a závity tenzometru budou umístěny distanční matice M5 a M6 z nerezové oceli A2, o tloušťce 4 mm.
 
@@ -358,17 +356,24 @@ https://dratek.cz/arduino-platforma/1047-univerzalni-plosny-spoj-30mm-x-70mm.htm
 Hornbach (4 ks)  
 
 **Červík**  
-https://www.hornbach.cz/p/staveci-sroub-s-vnitrnim-sestihranem-a-hrotem-m5x6-mm-nerez-ocel-a4-1-ks/12120029/ (2 ks)  
+https://www.hornbach.cz/p/staveci-sroub-s-vnitrnim-sestihranem-a-hrotem-m5x6-mm-nerez-ocel-a4-1-ks/12120029/ (4 ks)  
 
 **Lanko**  
 https://www.hornbach.cz/p/stavebni-provazek-2-mm-50-m-cerveny/5040757/  
 
 **Očko**  
-https://www.hornbach.cz/p/oko-s-metrickym-zavitem-m5x20-mm-nerez-ocel-a2-1-ks/12120479/  
+https://www.hornbach.cz/p/oko-s-metrickym-zavitem-m5x20-mm-nerez-ocel-a2-1-ks/12120479/ (2 ks)  
+
+**Klobouk**  
+https://www.hornbach.cz/p/kloboukova-matice-din-1587-m5-mosaz-1-ks/3830903/ (2 ks)  
 
 **Šrouby Matice Podložky**  
-https://www.hornbach.cz/p/kloboukova-matice-din-1587-m5-mosaz-1-ks/3830903/ (2 ks)  
-Hornbach osobně (11, 11, 2)  
+https://www.prumex.cz/sroub-zapustny-inbus-din-7991-m5x30-nerez-a2/ (4 ks)  
+https://www.prumex.cz/sroub-zapustny-inbus-din-7991-m5x25-nerez-a2/ (10 ks)  
+https://www.prumex.cz/sroub-sestihranny-cely-zavit-din-933-m5x16-nerez-a2-70/ (2 ks)  
+https://www.prumex.cz/matice-samojistna-nizka-din-985-m5-nerez-a2/ (4 ks)  
+https://www.prumex.cz/matice-din-934-m5-nerez-a2/ (10 ks)  
+https://www.prumex.cz/podlozka-plocha-din-125a-m5-nerezova-ocel-a2-5-3x10x1/ (4 ks)  
 
 |               |             |
 | :---          | :---:       |
@@ -377,7 +382,7 @@ Hornbach osobně (11, 11, 2)
 | ALZA          | 150 Kč      |
 | WILLMANN      | 175 Kč      |
 | HADEX         | 180 Kč      |
-| HORNBACH      | 800 Kč      |
+| HORNBACH      |  Kč      |
 | DEXHAL        | 590 Kč      |   
 | BATERKY       | 270 Kč      |
 | HOFMAN        | 125 Kč      |
@@ -387,7 +392,8 @@ Hornbach osobně (11, 11, 2)
 | ZENIT         | 100 Kč      |
 | LIHNEME       | 1150 Kč     |
 | SOS           | 450 Kč      |
+| PRUMEX        |  Kč      |
 | REZERVA       | 500 Kč      |
-| **CELKEM**    | **x Kč** |
+| **CELKEM**    | ** Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava.*
