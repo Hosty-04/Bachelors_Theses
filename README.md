@@ -278,7 +278,7 @@ https://www.gme.cz/v/1502753/wago-250-405-svorkovnice-5pol-roztec-25mm-4a-160v-v
 https://www.gme.cz/v/1513875/wago-221-2411-svorka-bezsroubova-2pol-vodic-do-4mm2 (4 ks)  
 
 **Konektor**  
-https://www.hadex.cz/p/d626-zdirka-rj45-do-dps-8p8c (5 ks)  
+https://www.hadex.cz/p/d626-zdirka-rj45-do-dps-8p8c (4 ks)  
 
 **Klipy**  
 Hornbach (cca 20 ks)  
@@ -290,10 +290,10 @@ https://www.gme.cz/v/1483738/kss-vs-100bk-sada-smrstovacich-buzirek
 https://www.dexhal.cz/fotovoltaicky-panel-9v-1110ma-10w-solarni-clanek_z2900/  
 
 **N-MOS**  
-https://www.hadex.cz/p/b441-2n7000-mosfet-n-fet-60v-0-35a-to92 (2 ks)  
+https://www.hadex.cz/p/b441-2n7000-mosfet-n-fet-60v-0-35a-to92 (10 ks)  
 
 **P-MOS**  
-https://www.gme.cz/v/1493257/infineon-irf4905pbf-unipolarni-tranzistor (4 ks)  
+https://www.gme.cz/v/1493257/infineon-irf4905pbf-unipolarni-tranzistor (10 ks)  
 
 **Akumulátor**  
 https://www.levne-baterky.cz/Green-Cell-AGM-Baterie-6V-4Ah-d5516.htm  
@@ -308,7 +308,7 @@ https://botland.cz/lora-lorawan/19267-lora-e5-mini-stm32wle5jc-modul-lorawan-868
 https://botland.cz/stm32-nucleo/18799-stm32-nucleo-l031k6-s-stm32l031k6-mcu-kompatibilni-s-arduino-nano-5904422364878.html (2 ks)  
 
 **Headery**  
-https://www.laskakit.cz/dupont-40pin-2-54-mm-pinovy-pas/  
+https://www.laskakit.cz/dupont-40pin-2-54-mm-pinovy-pas/ (4 ks)  
 
 **Proudový a napěťový senzor**  
 https://dratek.cz/arduino-platforma/1437-ina219-proudovy-snimac-obousmerny.html  
@@ -320,7 +320,7 @@ https://botland.cz/ovladace-stejnosmerneho-motoru/2695-drv8838-jednokanalovy-bud
 https://dratek.cz/arduino-platforma/3197-stejnosmerny-motor-s-prevodovkou-dc-6v-20-rpm.html  
 
 **Mikrospínač**  
-https://www.hadex.cz/p/l405a-mikrospinac-kw11-3z-on-on-1pol-250v-5a-s-packou-13mm (2 ks)  
+https://www.hadex.cz/p/l405a-mikrospinac-kw11-3z-on-on-1pol-250v-5a-s-packou-13mm (4 ks)  
 
 **Dvířka**  
 https://eshop.zenit.cz/desky/pvc-penene-desky/palight-print-8mm/variant/2030-3050/  
@@ -344,7 +344,7 @@ https://dratek.cz/arduino-platforma/1046-dps-adapter-sop8-so8-soic8-na-dip8.html
 https://www.gme.cz/v/1486151/hitano-ck-1u-50v-x7r-rm508-10-keramicky-kondenzator (4 ks)  
 
 **Pole**  
-https://www.laskakit.cz/velke-nepajive-kontaktni-pole-s-napajecimi-svorkami-2860-pinu/ (2 ks)  
+https://www.laskakit.cz/velke-nepajive-kontaktni-pole-s-napajecimi-svorkami-2860-pinu/  
 
 **Překližka**  
 Hornbach (4 ks)  
@@ -367,18 +367,18 @@ Hornbach
 |               |             |
 | :---          | :---:       |
 | **OBCHOD**    | **CENA**    |
-| GME           | 400 Kč      |
-| ALZA          | 200 Kč      |
-| HADEX         | 200 Kč      |
+| GME           | 650 Kč      |
+| ALZA          | 160 Kč      |
+| HADEX         | 180 Kč      |
 | HORNBACH      | 800 Kč      |
-| DEXHAL        | 500 Kč      |   
-| BATERKY       | 300 Kč      |
+| DEXHAL        | 590 Kč      |   
+| BATERKY       | 270 Kč      |
 | HOFMAN        | 125 Kč      |
-| LASKAKIT      | 1200 Kč     |
+| LASKAKIT      | 700 Kč      |
 | DRATEK        | 300 Kč      |
-| BOTLAND       | 1800 Kč     |
+| BOTLAND       | 1880 Kč     |
 | ZENIT         | 100 Kč      |
-| LIHNEME       | 1000 Kč     |
+| LIHNEME       | 1150 Kč     |
 | SOS           | 450 Kč      |
 | REZERVA       | 500 Kč      |
 | **CELKEM**    | **8825 Kč** |
