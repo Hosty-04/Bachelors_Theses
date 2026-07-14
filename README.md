@@ -21,7 +21,7 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 ### Krabičky
 Systém bude obsahovat jednu krabičku pro akumulátor o tloušťce stěny 2,4 mm, dále druhou krabičku (K) o tloušťce stěny 1,6 mm, jenž bude určena pro mechaniku a elektroniku dvířek a hlavní mikrořadič. Pro každé snáškové hnízdo bude dále určena samostatná krabička (Kx) o tloušťce stěny 1,6 mm. Každá tato krabička bude obsahovat potřebnou elektroniku a mikrořadič.
 
-Všechny krabičky budou vytištěny na 3D tiskárně z materiálu PETG. Tento materiál byl zvolen pro jeho vysokou houževnatost a teplotní odolnost. Jejich zadní stěna bude ve svislém směru prodloužena a bude mít tloušťku 3,5 mm. V každém rohu této stěny budou vytvořeny otvory pro vruty umožňující upevnění krabiček ke stěně.
+Všechny krabičky budou vytištěny na 3D tiskárně z materiálu PETG. Tento materiál byl zvolen pro jeho vysokou houževnatost a teplotní odolnost. Zadní stěna krabiček bude ve svislém směru prodloužena a bude mít tloušťku 3,5 mm. V každém rohu této stěny budou vytvořeny otvory pro vruty umožňující upevnění krabiček ke stěně.
 
 Dále budou na krabičkách K a Kx u víka vytvořeny nízké drážky ve tvaru písmene U s mírně zaoblenými rohy. Tyto drážky budou sloužit k protažení kabelů. Pro kabel o průřezu 1,5 mm² budou mít šířku 4,5 mm, hloubku 3 mm a zaoblení dna i hran 1 mm, pro kabel o průřezu 0,5 mm² budou mít šířku 3,5 mm, hloubku 2 mm a zaoblení dna i hran 0,75 mm a pro datový kabel bude šířka 6 mm a hloubka 3,5 mm a zaoblení stejné jako u prvního kabelu.
 
@@ -347,9 +347,6 @@ https://www.gme.cz/v/1486151/hitano-ck-1u-50v-x7r-rm508-10-keramicky-kondenzator
 **Pole**  
 https://www.laskakit.cz/velke-nepajive-kontaktni-pole-s-napajecimi-svorkami-2860-pinu/  
 
-**Deska**  
-https://dratek.cz/arduino-platforma/1047-univerzalni-plosny-spoj-30mm-x-70mm.html (5 ks)  
-
 **Překližka**  
 https://www.hornbach.cz/conf/osb-deska-kronospan-osb-3-f0-12-x-1250-x-2500-mm-nebrousena/3880511/  
 
@@ -384,13 +381,13 @@ https://www.prumex.cz/podlozka-plocha-din-125a-m5-nerezova-ocel-a2-5-3x10x1/ (4 
 | BATERKY | 270 Kč |
 | HOFMAN | 125 Kč |
 | LASKAKIT | 700 Kč |
-| DRATEK | 375 Kč |
+| DRATEK | 300 Kč |
 | BOTLAND | 1 880 Kč |
 | ZENIT | 120 Kč |
 | LIHNEME | 1 150 Kč |
 | SOS | 450 Kč |
 | PRUMEX | 200 Kč |
 | REZERVA | 500 Kč |
-| **CELKEM** | **8 225 Kč** |
+| **CELKEM** | **8 150 Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava. Položky z Hornbachu budou zakoupeny osobně.*
