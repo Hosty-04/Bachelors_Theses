@@ -64,7 +64,7 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 
 *Poznámka: Ostatní části systému jsou odpojovány přes tranzistorové spínače.*
 
-### Kontrola panelu a akumulátoru ()
+### Kontrola panelu a akumulátoru (25 ms a 8 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
@@ -72,7 +72,7 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 | INA219 aktivní | 0,7 mA | 1 mA | 8,75 µAh | 12,5 µAh |
 | **Celkem** | **0,92 mA** | **1,22 mA** | **11 µAh** | **14,6 µAh** |
 
-### Pohyb dvířek ()
+### Pohyb dvířek (27 s nebo 41 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
@@ -97,7 +97,7 @@ Použití spínaného buck měniče není vhodné z důvodu horší dostupnosti 
 
 *Poznámka: STM32 NUCLEO-L031K6, MAX3485, HX711 a tenzometr. Tyto obvody jsou v každé Kx, ale zásluhou chytrého používání tranzistorových spínačů a režimů řadiče se proud tváří, jako kdyby bylo v celém kurníku pouze jedno hnízdo. Trik je v tom, že zapnuté je pouze to, co zrovna pracuje. Výsledkem je 5 × nižší spotřeba*
 
-### LoRa TX ()
+### LoRa TX (4 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
@@ -195,7 +195,7 @@ MOSFET odpojovač bude tvořen dvěma P-MOS tranzistory s nízkým RDS(on), zapo
 
 Pro dosažení nízké klidové spotřeby budou jednotlivé části systému napájeny přes tranzistorové spínače. Důvodem je skutečnost, že většina elektronických částí pracuje pouze krátkodobě během měření, komunikace nebo pohybu dvířek. Trvalé napájení všech obvodů by způsobovalo zbytečný odběr energie z akumulátoru. Tyto spínače budou konstruovány stejně jako MOSFET odpojovač, ale jen s jedním PMOS tranzistorem, x Ω pull-up rezistorem a x Ω pull-down rezistorem. Přes první z těchto spínačů bude M řídit napájení k děliči, přes druhý k INA219, přes třetí k DRV8838 a čtvrtý bude dodávat napětí k hlavnímu MAX3485 a zároveň do všech krabiček Kx. V každé krabičce Kx budou potom další 2 spínače. Přes první z nich bude Mx řídit napájení ke svému MAX3485 a HX711. Ten bude ve výchozím stavu sepnutý. Přes druhý bude dodávat napájení do další krabičky Kx. Ten bude ve výchozím stavu rozepnutý.
 
-Po zapnutí napájení k daným částem systému bude potřeba chvíli počkat, než naběhnou. U INA219 a MAX3485 je to pouhých 150 µs a pro DRV8838 je to 2,5 ms než se nabijí kondenzátory a nábojová pumpa.
+Po zapnutí napájení jednotlivých částí systému bude nutné počkat na jejich ustálení. U obvodu INA219 bude použita čekací doba 200 µs, která zahrnuje náběh napájení, stabilizaci obvodu a nabití blokovacího keramického kondenzátoru 100 nF mezi VCC a GND. Kondenzátor 100 nF mezi VIN+ a GND slouží pouze k filtrování měřeného vstupu. Při nastavení 12bitového měření a průměrování 32 vzorků trvá vytvoření první hodnoty přibližně 17 ms (32 × 532 µs). Při měření proudu s průměrováním 4 vzorků bude doba vytvoření hodnoty přibližně 2,1 ms. U obvodu MAX3485 bude použita čekací doba 100 µs, která zahrnuje náběh obvodu a nabití blokovacího kondenzátoru 100 nF mezi VCC a GND. U budiče DRV8838 bude použita čekací doba 3 ms, která zahrnuje nabití elektrolytického kondenzátoru 47 µF a keramického kondenzátoru 100 nF mezi VM a GND a především ustálení interní nábojové pumpy. U obvodu HX711 bude po zapnutí napájení použita čekací doba přibližně 500 ms, která zahrnuje ustálení analogové části převodníku a dokončení prvního převodu. Následně bude možné odečítat stabilní naměřené hodnoty. Při zvoleném režimu 10 SPS trvá jedna konverze přibližně 100 ms.
 
 K solárnímu panelu bude připojen vysokoimpedanční napěťový dělič tvořený rezistory o hodnotách 1 MΩ a 470 kΩ. Paralelně k rezistoru R2 (470 kΩ) bude připojen filtrační keramický kondenzátor o parametrech 10 nF / 50 V. Dělič bude sloužit ke snímání napětí panelu, přičemž naměřené hodnoty budou odesílány do M přes ADC pin v analogovém režimu. Pro zvýšení přesnosti bude provedena kalibrace a výsledek bude aritmetickým průměrem z 16 vzorků. Vysoká impedance děliče zajistí jeho nízkou spotřebu.
 
