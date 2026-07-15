@@ -29,16 +29,18 @@ Víko bude vytištěno samostatně s přesahem 2 mm; uprostřed jeho levé hrany
 ### Kabeláž
 Pro připojení solárního panelu bude použita měděná ohebná licna o průřezu 1,5 mm², připojená přes 4pinovou pružinovou WAGO svorkovnici s roztečí 5,08 mm k desce plošných spojů a odtud dále k akumulátoru. Tento průřez poskytuje dostatečnou proudovou rezervu při minimálním úbytku napětí.
 
-Stejným způsobem budou k desce plošných spojů připojeny mikrospínače, avšak s licnou o průřezu 0,5 mm². Spoje této licny s kontakty mikrospínače budou izolovány smršťovacími bužírkami s poměrem 2:1 a vnitřním průměrem 2 mm / 0,75 mm (před / po zahřátí), přečnívajícími asi centimetr přes izolaci. U prototypu se využijí drátky do nepájivého pole stejného průřezu, který plně vyhovuje proudovému odběru systému.
+Stejným způsobem budou k desce plošných spojů připojeny mikrospínače, avšak s licnou o průřezu 0,5 mm². Spoje této licny s kontakty mikrospínače budou izolovány smršťovacími bužírkami s poměrem 2:1 a vnitřním průměrem 2 mm / 0,75 mm (před / po zahřátí), přečnívajícími asi centimetr přes izolaci.
 
 Kabely povedou v klasické elektroinstalační PVC liště o rozměrech 15 × 10 mm — dostatečně prostorné, a přitom minimalistické. Speciální UV odolná lišta není potřeba, protože stěna kurníku směřuje na severozápad; životnost běžné lišty se odhaduje na 5 až 10 let.
 
-Pro datovou komunikaci byl zvolen kabel UTP CAT5e typu licna, upevněný ke stěně pomocí 6mm šroubovacích příchytek, vrutu 4 × 20 mm a 6mm hmoždinky, a k desce plošných spojů připojený přes konektory RJ45. Prodloužení vodičů tenzometru zajistí stíněný kabel LiYCY 4 × 0,25 mm² typu licna, spojený přes prodlužovací pružinové WAGO svorky. Protože jsou vodiče od tenzometru (průřez 0,14 mm²) pro tyto svorky příliš tenké, přehnou se u odizolovaného konce napůl, čímž se jejich efektivní průřez zdvojnásobí na 0,28 mm². K desce plošných spojů bude tento kabel spolu se stíněním připojen přes 5pinovou pružinovou WAGO svorkovnici s roztečí 2,5 mm.
+Pro datovou komunikaci byl zvolen kabel UTP CAT5e typu licna, upevněný ke stěně pomocí 6mm šroubovacích příchytek, vrutu 4 × 20 mm a 6mm hmoždinky, a k desce plošných spojů připojený přes konektory RJ45. Prodloužení vodičů tenzometru zajistí stíněný kabel LiYCY 4 × 0,25 mm² typu licna, spojený přes prodlužovací pružinové WAGO svorky. Protože jsou vodiče od tenzometru (průřez 0,14 mm²) pro tyto svorky příliš tenké, přehnou se u odizolovaného konce napůl, čímž se jejich efektivní průřez zdvojnásobí na 0,28 mm². K desce plošných spojů bude tento kabel spolu se stíněním připojen přes 6pinovou pružinovou WAGO svorkovnici s roztečí 2,54 mm.
 
 Oplet kabelu (pocínované měděné drátky) se izoluje smršťovací bužírkou 2:1 o vnitřním průměru 4 mm / 1,75 mm. Odmotaný a spletený oplet je potřeba oddělit od zbylých čtyř vodičů a bužírku navléknout až ke kořenu; přes celý kabel se pak přetáhne bužírka 2:1 o rozměru 7,5 mm / 3,5 mm, přečnívající asi centimetr přes hlavní izolaci.
 
+U prototypu se využijí stejné kabely, svorkovnice a svorky. Průřez drátků do nepájivého pole (0,5 mm²) plně vyhovuje proudovému odběru systému.
+
 ### Napájení
-Výrobu energie zajistí fotovoltaický panel o parametrech 9 V / 10 Wp, svisle připevněný na stěnu pod malou stříšku a orientovaný na jih, případně na východ nebo západ (v tomto případě na jihozápad), aby co nejlépe využíval dostupnou sluneční energii. Vertikální montáž zároveň omezí usazování sněhu a nečistot. Tento panel byl zvolen proto, že při použití jednoduchého MOSFET odpojovače poskytuje vhodný poměr mezi napěťovou rezervou pro nabíjení 6V akumulátoru a dostupným nabíjecím proudem; jeho vyšší výkon navíc zvyšuje energetickou rezervu systému v zimě, kdy je intenzita slunečního záření nízká.
+Výrobu energie zajistí fotovoltaický panel o parametrech 9 V / 10 Wp, svisle připevněný na stěnu pod malou stříšku a orientovaný na jih, případně na východ nebo západ (v tomto případě na jihozápad), aby co nejlépe využíval dostupnou sluneční energii. Vertikální montáž zároveň omezí usazování sněhu a nečistot. Tento panel byl zvolen proto, že při použití jednoduchého MOSFET odpojovače poskytuje vhodný poměr mezi napěťovou rezervou pro nabíjení 6V akumulátoru a dostupným nabíjecím proudem; panel je schopen dodat maximálně 1,11 A, tudíž nepřekračuje nejvyšší povolený nabíjecí proud akumulátoru (1,2 A). Jeho vyšší výkon navíc zvyšuje energetickou rezervu systému v zimě, kdy je intenzita slunečního záření nízká.
 
 Systém bude napájen z bezúdržbového olověného AGM akumulátoru 6 V / 4 Ah, umístěného venku ve stínu asi 25 cm pod stříškou. Jeho nabíjecí účinnost se pohybuje kolem 88 %. I se zohledněním zimního poklesu kapacity o 30 % představuje jeho energetická rezerva několik stovek dní provozu — v praxi bude provozní dobu omezovat spíše několik týdnů nepříznivého počasí v kombinaci se samovybíjením 3 % za měsíc a přirozeným stárnutím než samotná spotřeba systému. Akumulátor typu LiFePO4 je sice v mnoha ohledech kvalitnější, nesmí se však nabíjet v zimě pod 0 °C a vyžaduje složitější nabíjecí systém. Vzhledem k volbé venkovního umístění a jednoduchého nabíjecího systému, je pro celoroční provoz vhodnější olověný akumulátor. Je důležité mít na paměti životnost kolem 5 let a 15 % ztrátu kapacity ročně.
 
@@ -268,7 +270,7 @@ https://www.gme.cz/v/1483738/kss-vs-100bk-sada-smrstovacich-buzirek
 
 **Svorkovnice a svorka**  
 https://www.gme.cz/v/1499112/wago-256-404-svorkovnice-4pol-roztec-508mm-24a-320v-vstup-45-pruzina (2 ks)  
-https://www.gme.cz/v/1502753/wago-250-405-svorkovnice-5pol-roztec-25mm-4a-160v-vstup-45-pruzina  
+https://www.gme.cz/v/1501395/wago-233-506-svorkovnice-6pol-roztec-254mm-6a-160v-vstup-45-pruzina  
 https://www.gme.cz/v/1513875/wago-221-2411-svorka-bezsroubova-2pol-vodic-do-4mm2 (4 ks)  
 
 **Konektor**  
