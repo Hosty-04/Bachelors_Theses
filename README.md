@@ -57,9 +57,9 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
 | LDO (MCP1702) | 2 µA | 5 µA | 48 µAh | 120 µAh |
-| M (Stop2 s RTC) | 1,0 µA | 26 µA | 24 µAh | 67,2 µAh |
-| 5 × Mx (Stop bez RTC) | 1,9 µA | 9,5 µA | 45,6 µAh | 45,6 µAh |
-| **Celkem** | **4,9 µA** | **9,7 µA** | **118 µAh** | **233 µAh** |
+| M (Stop2 s RTC) | 1,0 µA | 26 µA | 24 µAh | 624 µAh |
+| 5 × Mx (Stop bez RTC) | 1,9 µA | 9,5 µA | 45,6 µAh | 228 µAh |
+| **Celkem** | **4,9 µA** | **40,5 µA** | **118 µAh** | **972 µAh** |
 
 *Poznámka: Ostatní části systému jsou odpojovány přes tranzistorové spínače.*
 
@@ -67,41 +67,34 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
-| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 0,244 µAh | 0,244 µAh |
-| Dělič | 4,1 µA | 6,1 µA | | |
+| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 0,133 µAh | 0,433 µAh |
+| Dělič | 4,1 µA | 6,1 µA | 0,0046 µAh | 0,0068 µAh |
 | INA219 aktivní | 0,7 mA | 1 mA | 0,583 µAh | 0,833 µAh |
-| **Celkem** | **0,92 mA** | **1,22 mA** | **0,83 µAh** | **1,08 µAh** |
+| **Celkem** | **0,824 mA** | **1,40 mA** | **0,721 µAh** | **1,27 µAh** |
 
 ### Pohyb dvířek (32 s nebo 55 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
-| Motor | 100 mA | 250 mA | 1,17 mAh | 2,33 mAh |
-| DRV8838 | 340 µA | 600 µA | 2,64 µAh | 7,00 µAh |
-| Mikrospínače | | | | |  
-| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 1,71 µAh | 2,57 µAh |
-| INA219 | 0,7 mA | 1 mA | 5,44 µAh | 11,7 µAh |
-| **Celkem** | **151 mA** | **202 mA** | **1,18 mAh** | **2,35 mAh** |
+| Motor | 100 mA | 250 mA | 0,889 mAh | 3,82 mAh |
+| DRV8838 | 340 µA | 600 µA | 3,02 µAh | 9,17 µAh |
+| Mikrospínače | 150 µA | 150 µA | 1,33 µAh | 2,29 µAh |
+| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 1,07 µAh | 5,96 µAh |
+| INA219 | 0,7 mA | 1 mA | 6,22 µAh | 15,3 µAh |
+| **Celkem** | **101 mA** | **252 mA** | **0,901 mAh** | **3,85 mAh** |
 
 *Poznámka: Možnost zaseknutí dvířek je brána v potaz.*
-
-### Astronomické hodiny (1 ms)
-
-| Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
-|:---|:---:|:---:|:---:|:---:|
-| M (Run @ 48 MHz) | 3,4 mA | 3,45 mA | | |
-| **Celkem** | **** | **** | **** | **** |
 
 ### Kontrola vajec (8 min)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
-| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 29,3 µAh | 29,3 µAh |
+| M (LPRun @ 1 MHz) | 120 µA | 390 µA | 16,0 µAh | 52,0 µAh |
 | MAX3485 (M) | 1,1 mA | 2,2 mA | 147 µAh | 293 µAh |
 | MAX3485 (Mx) | 1,1 mA | 2,2 mA | 147 µAh | 293 µAh |
 | Mx (LPRun @ 131 kHz) | 32 µA | 37 µA | 4,27 µAh | 4,93 µAh |
 | HX711 a tenzometr | 4,4 mA | 4,4 mA | 0,587 mAh | 0,587 mAh |
-| **Celkem** | **6,85 mA** | **9,06 mA** | **0,914 mAh** | **1,21 mAh** |
+| **Celkem** | **6,75 mA** | **9,23 mA** | **0,901 mAh** | **1,23 mAh** |
 
 *Poznámka: STM32 NUCLEO-L031K6, MAX3485, HX711 a tenzometr jsou přítomny v každé krabičce Kx, ale díky chytrému využití tranzistorových spínačů a režimů řadiče je zapnuté vždy jen to, co zrovna pracuje — proudový odběr se tak chová, jako by v kurníku bylo jediné hnízdo, což znamená přibližně pětkrát nižší spotřebu.*
 
@@ -110,16 +103,16 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
 | Rádio TX (SMPS) | 21 mA | 21 mA | 23,3 µAh | 23,3 µAh |
-| CPU (LPSleep) | 44 µA | 310 µA | 0,049 µAh | 0,077 µAh |
-| **Celkem** | **21 mA** | **21,1 mA** | **23,4 µAh** | **23,4 µAh** |
+| CPU (LPSleep) | 44 µA | 310 µA | 0,049 µAh | 0,344 µAh |
+| **Celkem** | **21,0 mA** | **21,3 mA** | **23,4 µAh** | **23,7 µAh** |
 
 ### LoRa RX (11 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
 | Rádio RX (SMPS) | 4,8 mA | 4,8 mA | 14,7 µAh | 14,7 µAh |
-| CPU (LPSleep) | 44 µA | 310 µA | 0,134 µAh | 0,211 µAh |
-| **Celkem** | **4,84 mA** | **4,87 mA** | **14,8 µAh** | **14,9 µAh** |
+| CPU (LPSleep) | 44 µA | 310 µA | 0,134 µAh | 0,947 µAh |
+| **Celkem** | **4,84 mA** | **5,11 mA** | **14,8 µAh** | **15,6 µAh** |
 
 *Poznámka: Bezpečný odhad délky okna je 200 ms.*
 
@@ -127,36 +120,49 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 
 | Blok | Spotřeba (typ) | Podíl | Spotřeba (max) | Podíl |
 |:---|:---:|:---:|:---:|:---:|
-| Pohyb dvířek | 1,18 mAh | 52,3 % | 2,35 mAh | 61,4 % |
-| Kontrola vajec | 914 µAh | 40,7 % | 1,21 mAh | 31,5 % |
-| Klidový režim | 118 µAh | 5,3 % | 233 µAh | 6,1 % |
-| LoRa TX | 23,4 µAh | 1,0 % | 23,4 µAh | 0,6 % |
-| LoRa RX | 14,8 µAh | 0,7 % | 14,9 µAh | 0,4 % |
-| Kontrola panelu / baterie | 0,83 µAh | 0,0 % | 1,08 0,38µAh | 0,0 % |
-| Astronomické hodiny | | | | |
-| **Celkem** | **2,25 mAh** | 100 % | **3,84 mAh** | 100 % |
+| Pohyb dvířek | 0,901 mAh | 46,0 % | 3,85 mAh | 63,2 % |
+| Kontrola vajec | 0,901 mAh | 46,0 % | 1,23 mAh | 20,2 % |
+| Klidový režim | 118 µAh | 6,0 % | 972 µAh | 16,0 % |
+| LoRa TX | 23,4 µAh | 1,2 % | 23,7 µAh | 0,4 % |
+| LoRa RX | 14,8 µAh | 0,8 % | 15,6 µAh | 0,3 % |
+| Kontrola panelu / baterie | 0,721 µAh | 0,0 % | 1,27 µAh | 0,0 % |
+| **Celkem** | **1,96 mAh** | 100 % | **6,09 mAh** | 100 % |
 
 ### Výrobená energie
 
 | Orientace | Léto | Zima |
 |:---|:---:|:---:|
-| Jih | | |
-| Východ | | |
-| Západ | | |
-| Jihozápad | | |
+| Jih | 2759 mAh | 1478 mAh |
+| Východ | 2069 mAh | 739 mAh |
+| Západ | 2069 mAh | 739 mAh |
+| Jihozápad | 2365 mAh | 1232 mAh |
 
-*Poznámka: Energie dodávaná do akumulátoru přes oddělovač. Do výpočtů byly zahrnuty ztráty neideálního pracovního bodu fotovoltaického panelu, použití a ztráty jednoduchého regulátoru, přibližná nabíjecí účinnost akumulátoru, svislá poloha panelu a běžné klimatické podmínky v ČR.*
+*Poznámka: Energie dodávaná do akumulátoru přes oddělovač. Do výpočtů byly zahrnuty ztráty neideálního pracovního bodu fotovoltaického panelu, použití a ztráty jednoduchého regulátoru, přibližná nabíjecí účinnost akumulátoru, svislá poloha panelu a běžné klimatické podmínky v ČR*
 
 ### Energetická bilance
 
 | Orientace panelu | Léto | Zima | Hodnocení |
 |:---|:---:|:---:|:---|
-| Jih | | | Velmi vysoká energetická rezerva |
-| Východ | | | Spolehlivý celoroční provoz s dostatečnou rezervou |
-| Západ | | | Spolehlivý celoroční provoz s dostatečnou rezervou |
-| Jihozápad | | | Spolehlivý celoroční provoz |
+| Jih | +2749 mAh | +1468 mAh | Velmi vysoká energetická rezerva |
+| Východ | +2059 mAh | +729 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
+| Západ | +2059 mAh | +729 mAh | Spolehlivý celoroční provoz s dostatečnou rezervou |
+| Jihozápad | +2355 mAh | +1222 mAh | Spolehlivý celoroční provoz |
 
 *Poznámka: Počítáno je i se samovybíjením akumulátoru.*
+
+
+
+### Astronomické hodiny (1 ms)
+
+| Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
+|:---|:---:|:---:|:---:|:---:|
+| M (Run @ 48 MHz) | 3,4 mA | 3,45 mA | | |
+| **Celkem** | **** | **** | **** | **** |
+
+
+
+
+
 
 ### Řízení
 Hlavní řídicí jednotkou systému bude mikrořadič STM32WLE5JC LoRa-E5 mini (M) s integrovaným LoRa modulem, komunikujícím přes LoRaWAN stack. Technologie LoRaWAN umožní na rozdíl od Wi-Fi komunikaci na velké vzdálenosti při nízké spotřebě energie a na rozdíl od NB-IoT trvalé řešení s dobrým pokrytím. U každého snáškového hnízda bude umístěn další mikrořadič STM32 NUCLEO-L031K6 (Mx), který má integrovaný programátor využitelný i pro hlavní řadič.
@@ -193,7 +199,7 @@ U ostatních řídicích jednotek to bude po většinu dne velmi podobné — ze
 
 Přechod mikrořadičů mezi úspornými režimy (Stop2/Stop) a režimem LP Run / Run trvá řádově jednotky až desítky mikrosekund včetně obnovení systémových hodin. Ve srovnání s dobou měření senzorů (desítky milisekund až sekundy) je tato doba zanedbatelná, a proto se v energetické bilanci neuvažuje.
 
-Před odpojením napájení VCC jednotlivých částí systému je nutné přepsat výstupy (SCK, PH, EN, DI, DE, RE) na logickou nulu, aby se zamezilo napájení přes výstupy tomu neurčené (tzv. leakage current). Dále je třeba vypnout periferie (I²C, UART, ADC) i jejich hodinový signál, který plýtvá energií, i když právě nic nepřenáší. Po odpojení VCC je pak nutné nastavit všechny piny — včetně těch pro právě vypnuté periferie — do analogového režimu bez pull rezistoru. Po dosažení koncové polohy dvířek se vstupy pro koncové spínače taktéž přepnou do analogového režimu bez pull rezistorů, čímž se eliminuje jejich klidový odběr.
+Před odpojením napájení VCC jednotlivých částí systému je nutné přepsat výstupy (SCK, PH, EN, DI, DE, RE) na logickou nulu, aby se zamezilo napájení přes výstupy tomu neurčené (tzv. leakage current). Dále je třeba vypnout periferie (I²C, UART, ADC) i jejich hodinový signál, který plýtvá energií, i když právě nic nepřenáší. Po odpojení VCC je nutné všechny piny — včetně těch pro právě vypnuté periferie — přepnout do analogového režimu bez pull rezistoru. Stejný postup se použije i u vstupů pro koncové spínače: jakmile dvířka dosáhnou koncové polohy, přepnou se do analogového režimu bez pull rezistorů, čímž se eliminuje jejich klidový odběr.
 
 Kvůli spotřebě bude nutné odpájet červenou Power LED diodu a softwarově odpojit všechny zelené User LED diody. Programátor ST-Link musí být za provozu hardwarově odpojen, proto je potřeba odpájet pájecí jumpery SB9, SB14, SB2 a SB3. U LoRa-E5 mini je navíc nutné přepnout piny PA2 a PA3, určené k ladění, do analogového režimu bez pull rezistoru. Pro programování lze pak programátor k deskám připojovat přes klasické Dupont kabely, a u LoRa-E5 mini vrátit piny PA2 a PA3 do původního stavu. Zvláštní pozornost je třeba věnovat plovoucím pinům — nepoužívané piny musí být vždy v analogovém režimu bez pull rezistoru. Při nepoužívání rádia je nutné nastavit externí RF switch na logickou nulu; u řadičů bez rádia je zase potřeba v registrech napájení (PWR) aktivovat ultra-low-power režim (bit ULP) a vypnout fast wakeup.
 
@@ -235,7 +241,7 @@ Na horní části přední strany dvířek bude umístěno závěsné očko M5 z
 
 Otvor pro mosaznou závitovou vložku bude mít průměr 8 mm a v posledních 6,5 mm směrem ke hřídeli se zúží na 6,5 mm. Vložka se do otvoru zavede pomocí 16mm šroubu M5; jakmile narazí na zúženou část otvoru, hlava šroubu se nahřeje mikropájkou, plast se v místě zúžení roztaví a umožní zalisování vložky. Po odejmutí pájky plast opět ztuhne a vložku pevně ukotví.
 
-V horní i dolní části hranolku budou ve svislé ose zapuštěny dva pákové koncové mikrospínače, které budou sledovat polohu dvířek. K akumulátoru bude připojen kontakt COM, k M kontakt NO spolu s interním pull-down rezistorem — rezistor je potřeba kvůli kabelům, které se chovají jako anténa. Záhlubení široká 6,5 mm a vysoká 20 mm povedou skrz hranolek a 10mm širokou hliníkovou drážku kvůli vývodu pinů. Mikrospínače budou upevněny vruty o průměru 2 mm; otvory je třeba předvrtat, aby se dřevo při vrtání nedeformovalo. Koncové spínače představují jednoduché řešení určování krajních poloh dvířek.
+V horní i dolní části hranolku budou ve svislé ose zapuštěny dva pákové koncové mikrospínače sledující polohu dvířek. Kontakt COM každého spínače bude připojen k akumulátoru, kontakt NO k M spolu s interním pull-down rezistorem 40 kΩ — pull-down je potřeba kvůli kabelům, které se chovají jako anténa. Záhlubení široká 6,5 mm a vysoká 20 mm povedou skrz hranolek a 10mm širokou hliníkovou drážku kvůli vývodu pinů. Mikrospínače budou upevněny vruty o průměru 2 mm; otvory je třeba předvrtat, aby se dřevo při vrtání nedeformovalo. Koncové spínače představují jednoduché řešení určování krajních poloh dvířek.
 
 Vedlejší část systému bude umístěna u spádovaných snáškových hnízd s košíkem, orientovaných příčně ke stěně. Celá konstrukce musí být od stěny vzdálena natolik, aby se jí nikde nedotýkala a zároveň za ní zůstal prostor pro vedení kabelu; současně je nutné zabránit přístupu slepic a hlodavců do tohoto prostoru.
 
