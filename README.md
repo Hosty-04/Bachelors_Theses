@@ -10,7 +10,7 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 - Ověřte funkčnost systému experimentálním měřením a vyhodnoťte spolehlivost detekce a ovládání.
 - Zveřejněte veškeré výrobní podklady na vhodné platformě (např. GitHub).
 
-## Blokové schéma
+## Schéma
 <img src="https://github.com/Hosty-04/Bachelors_Theses/blob/main/schematics/block_schematic_white.png" alt="block_schematic">
 
 ## Popis
