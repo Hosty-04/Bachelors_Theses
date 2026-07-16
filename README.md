@@ -82,14 +82,7 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | INA219 | 0,7 mA | 1 mA | 6,22 µAh | 15,3 µAh |
 | **Celkem** | **101 mA** | **252 mA** | **0,9 mAh** | **3,85 mAh** |
 
-*Poznámka: Možnost zaseknutí dvířek je brána v potaz. Mikrospínače budou spotřebovávat velmi málo energie po velmi krátkou dobu.*
-
-### Astronomické hodiny (1 ms)
-
-| Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
-|:---|:---:|:---:|:---:|:---:|
-| M (Run @ 48 MHz) | 3,4 mA | 3,45 mA | 0,944 nAh | 0,958 nAh |
-| **Celkem** | **3,4 mA** | **3,45 mA** | **0,944 nAh** | **0,958 nAh** |
+*Poznámka: Možnost zaseknutí dvířek je brána v potaz. Mikrospínače budou spotřebovávat velmi málo energie po velmi krátkou dobu; výpočet astronomických hodin bude trvat pouze jednu milisekundu.*
 
 ### Kontrola vajec (8 min)
 
@@ -110,8 +103,8 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 |:---|:---:|:---:|:---:|:---:|
 | LoRa TX | 21 mA | 21 mA | 23,3 µAh | 23,3 µAh |
 | LoRa RX | 4,8 mA | 4,8 mA | 14,7 µAh | 14,7 µAh |
-| CPU (LPSleep) | 44 µA | 310 µA | 0,186 µAh | 1,29 µAh |
-| **Celkem** | **25,8 mA** | **26,1 mA** | **35,2 µAh** | **39,3 µAh** |
+| CPU (LPSleep) | 44 µA | 310 µA | 0,183 µAh | 1,29 µAh |
+| **Celkem** | **25,8 mA** | **26,1 mA** | **38,2 µAh** | **39,3 µAh** |
 
 *Poznámka: Bezpečný odhad délky příjmového okna je 200 ms.*
 
@@ -122,9 +115,8 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | Pohyb dvířek | 0,9 mAh | 46,0 % | 3,85 mAh | 63,2 % |
 | Kontrola vajec | 0,9 mAh | 46,0 % | 1,23 mAh | 20,2 % |
 | Klidový režim | 118 µAh | 6,0 % | 972 µAh | 15,9 % |
-| Komunikace | 38,2 µAh | 2 % | 39,3 µAh | 0,7 % |
+| Komunikace | 38,2 µAh | 2,0 % | 39,3 µAh | 0,7 % |
 | Kontrola panelu / baterie | 0,721 µAh | 0,0 % | 1,27 µAh | 0,0 % |
-| Astronomické hodiny | 0,944 nAh | 0,0 % | 0,958 nAh | 0,0 % |
 | **Celkem** | **1,96 mAh** | 100 % | **6,09 mAh** | 100 % |
 
 ### Výrobená energie
