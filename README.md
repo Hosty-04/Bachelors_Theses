@@ -279,6 +279,7 @@ https://www.levne-baterky.cz/Green-Cell-AGM-Baterie-6V-4Ah-d5516.htm
 
 **Pojistka**  
 https://www.gme.cz/v/1511309/schurter-spt-5x20-h-2a-250v-poistka-trubickova-s-keramikou (5 ks)  
+https://www.gme.cz/v/1512336/stelvio-chapponi-ptf15b-poistkove-puzdro-do-dps (2 ks)  
 
 **Lineární LDO regulátor**  
 https://www.elektro-hofman.cz/stabilizator-pevneho-napeti-mcp1702-3302et-3-3v-0-25a-low-drop-to92/ (2 ks)  
@@ -354,7 +355,7 @@ https://www.prumex.cz/podlozka-plocha-din-125a-m5-nerezova-ocel-a2-5-3x10x1/ (4 
 
 | OBCHOD | CENA |
 |:---|:---:|
-| GME | 700 Kč |
+| GME | 720 Kč |
 | ALZA | 150 Kč |
 | WILLMANN | 175 Kč |
 | HADEX | 120 Kč |
@@ -370,6 +371,6 @@ https://www.prumex.cz/podlozka-plocha-din-125a-m5-nerezova-ocel-a2-5-3x10x1/ (4 
 | SOS | 450 Kč |
 | PRUMEX | 200 Kč |
 | REZERVA | 500 Kč |
-| **CELKEM** | **8 140 Kč** |
+| **CELKEM** | **8 160 Kč** |
 
 *Poznámka: Cena je orientační a je do ní započtena i doprava. Položky z Hornbachu budou zakoupeny osobně.*
