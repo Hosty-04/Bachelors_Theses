@@ -72,7 +72,7 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | INA219 aktivní | 0,7 mA | 1 mA | 583 nAh | 833 nAh |
 | **Celkem** | **0,824 mA** | **1,40 mA** | **0,721 µAh** | **1,27 µAh** |
 
-### Pohyb dvířek (32 s / 55 s)
+### Pohyb dvířek (32-55 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
@@ -97,27 +97,27 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 
 *Poznámka: STM32 NUCLEO-L031K6, MAX3485, HX711 a tenzometr jsou přítomny v každé krabičce Kx, ale díky chytrému využití tranzistorových spínačů a režimů řadiče je zapnuté vždy jen to, co zrovna pracuje — proudový odběr se tak chová, jako by v kurníku bylo jediné hnízdo, což znamená přibližně pětkrát nižší spotřebu.*
 
-### Komunikace (4 s a 11 s)
+### Komunikace (4 s a 1-3 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
 | LoRa TX | 21 mA | 21 mA | 23,3 µAh | 23,3 µAh |
-| LoRa RX | 4,8 mA | 4,8 mA | 14,7 µAh | 14,7 µAh |
+| LoRa RX | 4,8 mA | 4,8 mA | 1,33 µAh | 4 µAh |
 | CPU (LPSleep) | 44 µA | 310 µA | 0,183 µAh | 1,29 µAh |
-| **Celkem** | **25,8 mA** | **26,1 mA** | **38,2 µAh** | **39,3 µAh** |
+| **Celkem** | **25,8 mA** | **26,1 mA** | **24,8 µAh** | **28,6 µAh** |
 
-*Poznámka: Bezpečný odhad délky příjmového okna je 200 ms.*
+*Poznámka: Bezpečný odhad délky příjmového okna je 30-50 ms.*
 
 ### Procentuální rozložení a celková denní spotřeba
 
 | Blok | Spotřeba (typ) | Podíl | Spotřeba (max) | Podíl |
 |:---|:---:|:---:|:---:|:---:|
-| Pohyb dvířek | 0,9 mAh | 46,0 % | 3,85 mAh | 63,2 % |
-| Kontrola vajec | 0,9 mAh | 46,0 % | 1,23 mAh | 20,2 % |
-| Klidový režim | 118 µAh | 6,0 % | 972 µAh | 15,9 % |
-| Komunikace | 38,2 µAh | 2,0 % | 39,3 µAh | 0,7 % |
+| Pohyb dvířek | 0,9 mAh | 46,3 % | 3,85 mAh | 63,3 % |
+| Kontrola vajec | 0,9 mAh | 46,3 % | 1,23 mAh | 20,2 % |
+| Klidový režim | 118 µAh | 6,1 % | 972 µAh | 16,0 % |
+| Komunikace | 24,8 µAh | 1,3 % | 28,6 µAh | 0,5 % |
 | Kontrola panelu / baterie | 0,721 µAh | 0,0 % | 1,27 µAh | 0,0 % |
-| **Celkem** | **1,96 mAh** | 100 % | **6,09 mAh** | 100 % |
+| **Celkem** | **1,94 mAh** | 100 % | **6,08 mAh** | 100 % |
 
 ### Výrobená energie
 
@@ -150,7 +150,7 @@ Firmware bude vyvíjen v prostředí STM32CubeIDE. Součástí firmwaru hlavníh
 
 Hlavní řídicí jednotka se bude společně s nezbytnými částmi systému probouzet každých 10 minut, aby zkontrolovala stav solárního panelu a akumulátoru. Dále se bude spolu s ostatními řídicími jednotkami a dalšími potřebnými částmi systému probouzet každou hodinu, kdy postupně, hnízdo po hnízdu, provede kontrolu stavu vajec. Nakonec se bude probouzet ráno a večer — opět pouze s nezbytnými částmi systému — kvůli otevření a zavření dvířek. Po sběru dat ze všech hnízd a po změně stavu dvířek následuje komunikace.
 
-LoRa anténa bude moci vysílat teprve po vypnutí všech ostatních systémů, a to kvůli jejímu vyššímu odběru proudu a ochraně proti rušení. Po každém vysílání bude mít možnost přijímat data, což umožní uživatelské ovládání. Upřednostňované parametry komunikace jsou: vysílací výkon 12 dBm, SF9, šířka pásma 125 kHz, kódovací poměr 4/5, dvě příjmová okna RX1 a RX2, jejichž délka se automaticky přizpůsobuje driftu krystalu.
+LoRa anténa bude moci vysílat teprve po vypnutí všech ostatních systémů, a to kvůli jejímu vyššímu odběru proudu a ochraně proti rušení. Po každém vysílání bude mít možnost přijímat data, což umožní uživatelské ovládání. Upřednostňované parametry komunikace jsou: vysílací výkon 12 dBm, SF9, šířka pásma 125 kHz, kódovací poměr 4/5, LoRaWAN Class A - primární příjmové okno RX1 a záložní okno RX2.
 
 V domě bude umístěna LoRaWAN gateway, plnící funkci internetové brány přes Wi-Fi. Veškerá přijatá data budou odeslána do cloudu (TTN) a odtud přes MQTT na backend (Node.js), který je uloží do databáze (InfluxDB) a zobrazí na frontendu. Při odesílání dat z gateway do kurníku probíhá proces obráceně.
 
