@@ -120,6 +120,8 @@ kde:
 - $t_z$ ... zpoždění při zaseknutí dvířek
 - $h$ ... výška dvířek
 
+&nbsp;
+
 *Poznámka: Mikrospínače budou spotřebovávat velmi málo energie po velmi krátkou dobu; výpočet astronomických hodin bude trvat pouze jednu milisekundu.*
 
 &nbsp;
@@ -150,6 +152,8 @@ kde:
 - $t_i$ ... doba inicializace
 - $t_v$ ... doba vzorkování
 - $t_c$ ... celková doba každohodinové kontroly h hnízd
+
+&nbsp;
 
 *Poznámka: STM32 NUCLEO-L031K6, MAX3485, HX711 a tenzometr jsou přítomny v každé krabičce Kx, ale díky chytrému využití tranzistorových spínačů a režimů řadiče je zapnuté vždy jen to, co zrovna pracuje — proudový odběr se tak tváří, jako by v kurníku bylo jediné hnízdo, což znamená pětkrát nižší spotřebu.*
 
