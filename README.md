@@ -75,6 +75,14 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | INA219 aktivní | 0,7 mA | 1 mA | 583 nAh | 833 nAh |
 | **Celkem** | **0,824 mA** | **1,40 mA** | **0,721 µAh** | **1,27 µAh** |
 
+&nbsp;
+
+$$
+\tau = (R_1 || R_2) \cdot C = (1\ \text{M\ohm} + 470\ \text{k\ohm}) \cdot 10\ \text{nF} = 3,2\ \text{s}
+t_i = 5 \cdot \tau = 16\ \text{ms}
+t_p = 144 \cdot (t_i + t_v) = 144 \cdot (16\ \text{ms} + 5\ \text{ms}) = 144 \cdot 21\ \text{ms} \approx \mathbf{4\ \text{s}}
+$$
+
 ### Pohyb dvířek (32-55 s)
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
@@ -143,7 +151,7 @@ kde:
 &nbsp;
 
 $$
-t = t_v + t_i = 3,2\ \text{s} + 0,5\ \text{s} = 3,7\ \text{s} \approx \mathbf{4\ \text{s}}
+t = t_i + t_v = 0,5\ \text{s} + 3,2\ \text{s} = 3,7\ \text{s} \approx \mathbf{4\ \text{s}}
 $$
 
 $$
