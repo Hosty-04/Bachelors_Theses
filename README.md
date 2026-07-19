@@ -82,6 +82,8 @@ Použití spínaného buck měniče není vhodné kvůli horší dostupnosti ní
 | INA219 | 0,7 mA | 1 mA | 6,22 µAh | 15,3 µAh |
 | **Celkem** | **101 mA** | **252 mA** | **0,9 mAh** | **3,85 mAh** |
 
+&nbsp;
+
 $$
 O_s = \pi \cdot d_s = \pi \cdot 25\ \text{mm} = 78,5\ \text{mm}
 $$
@@ -131,6 +133,8 @@ kde:
 | HX711 a tenzometr | 4,4 mA | 4,4 mA | 587 µAh | 587 µAh |
 | **Celkem** | **6,75 mA** | **9,23 mA** | **0,9 mAh** | **1,23 mAh** |
 
+&nbsp;
+
 $$
 t = t_v + t_i = 3,2\ \text{s} + 0,5\ \text{s} = 3,7\ \text{s} \approx \mathbf{4\ \text{s}}
 $$
@@ -141,8 +145,8 @@ $$
 
 kde:
 - $t$ ... doba kontroly jednoho hnízda
-- $t_v$ ... doba vzorkování
 - $t_i$ ... doba inicializace
+- $t_v$ ... doba vzorkování
 - $t_c$ ... celková doba každohodinové kontroly h hnízd
 
 *Poznámka: STM32 NUCLEO-L031K6, MAX3485, HX711 a tenzometr jsou přítomny v každé krabičce Kx, ale díky chytrému využití tranzistorových spínačů a režimů řadiče je zapnuté vždy jen to, co zrovna pracuje — proudový odběr se tak tváří, jako by v kurníku bylo jediné hnízdo, což znamená pětkrát nižší spotřebu.*
@@ -155,6 +159,8 @@ kde:
 | LoRa RX | 4,8 mA | 4,8 mA | 1,33 µAh | 4 µAh |
 | CPU (LPSleep) | 44 µA | 310 µA | 0,183 µAh | 1,29 µAh |
 | **Celkem** | **25,8 mA** | **26,1 mA** | **24,8 µAh** | **28,6 µAh** |
+
+&nbsp;
 
 $$
 t_v = 24 \cdot t_{5B} + 2 \cdot t_{2B} = 24 \cdot 150\ \text{ms} + 2 \cdot 130\ \text{ms} = 3,86\ \text{s} \approx \mathbf{4\ \text{s}}
