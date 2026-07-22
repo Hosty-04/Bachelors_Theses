@@ -597,7 +597,7 @@ https://www.hornbach.cz/p/oko-s-metrickym-zavitem-m5x20-mm-nerez-ocel-a2-1-ks/12
 **Klobouk**  
 https://www.hornbach.cz/p/kloboukova-matice-din-1587-m5-mosaz-1-ks/3830903/ (2 ks)  
 
-**Šrouby Matice Podložky**  
+**Spojovací materiál**  
 https://www.prumex.cz/sroub-zapustny-inbus-din-7991-m5x30-nerez-a2/ (4 ks)  
 https://www.prumex.cz/sroub-zapustny-inbus-din-7991-m5x25-nerez-a2/ (10 ks)  
 https://www.prumex.cz/sroub-sestihranny-cely-zavit-din-933-m5x16-nerez-a2-70/ (2 ks)  
