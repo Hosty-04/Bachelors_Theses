@@ -39,9 +39,7 @@ Víko bude vytištěno samostatně s přesahem 2 mm; uprostřed jeho levé hrany
 
 Na krabičkách K a Kx budou dále u víka vytvořeny nízké drážky ve tvaru písmene U s mírně zaoblenými rohy, sloužící k protažení kabelů. Pro kabel o průřezu 1,5 mm² budou mít šířku 4,5 mm, hloubku 3 mm a zaoblení dna i hran 1 mm; pro kabel o průřezu 0,5 mm² šířku 3,5 mm, hloubku 2 mm a zaoblení dna i hran 0,75 mm; pro datový kabel pak šířku 6 mm, hloubku 3,5 mm a stejné zaoblení jako u prvního kabelu.
 
-Krabička Kx bude mít zespodu jeden otvor o průměru 6 mm pro průchod kabelu od tenzometru, krabička K pak otvor o průměru 3 mm pro lanko.
-
-U krabičky pro akumulátor budou zespodu dva kruhové otvory o průměru 5 mm určené pro průchod napájecích kabelů a dva větrací otvory o průměru 4 mm, umístěné v horní a spodní části tak, aby mohl uvnitř cirkulovat vzduch.
+U krabičky pro akumulátor budou zespodu dva kruhové otvory o průměru 5 mm určené pro průchod napájecích kabelů a dva větrací otvory o průměru 4 mm, umístěné v horní a spodní části tak, aby mohl uvnitř cirkulovat vzduch. Krabička Kx bude mít zespodu jeden otvor o průměru 6 mm pro průchod kabelu od tenzometru, krabička K pak otvor o průměru 3 mm pro lanko.
 
 &nbsp;
 
