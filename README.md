@@ -31,7 +31,7 @@ Systém pro automatizaci kurníku s detekcí snesených vajec
 &nbsp;
 
 ### Krabičky
-Systém bude obsahovat jednu krabičku pro akumulátor o tloušťce stěny 2,4 mm a jednu krabičku (K) o tloušťce stěny 1,6 mm určenou pro mechaniku a elektroniku dvířek a hlavní mikrořadič. Pro každé snáškové hnízdo je dále vyhrazena samostatná krabička (Kx) se stejnou tloušťkou stěny, obsahující potřebnou elektroniku a mikrořadič.
+Systém bude obsahovat jednu krabičku pro akumulátor o tloušťce stěny 2,4 mm a jednu krabičku (K) o tloušťce stěny 1,6 mm určenou pro mechaniku a elektroniku dvířek a hlavní mikrořadič. Pro každé snáškové hnízdo je dále vyhrazena samostatná krabička (Kx) o stejné tloušťce, obsahující potřebnou elektroniku a mikrořadič.
 
 Všechny krabičky budou vytištěny na 3D tiskárně z materiálu PETG, zvoleného pro vysokou houževnatost a teplotní odolnost. Zadní stěna krabiček bude ve svislém směru prodloužena a bude mít tloušťku 3,5 mm; v každém rohu této stěny vzniknou otvory pro vruty, které umožní upevnění krabiček ke stěně kurníku.
 
