@@ -214,7 +214,7 @@ t = t_i + t_v = 0,5\ \text{s} + \frac{32}{10} = 0,5\ \text{s} + 3,2\ \text{s} = 
 $$
 
 $$
-t_min = 24 \cdot h \cdot t = 24 \cdot 5 \cdot 4\ \text{s} = \mathbf{480\ \text{s}}
+t_{min} = 24 \cdot h \cdot t = 24 \cdot 5 \cdot 4\ \text{s} = \mathbf{480\ \text{s}}
 $$
 
 $$
@@ -222,15 +222,15 @@ t_r = 2 \cdot t \cdot t_v = 2 \cdot 5 \cdot 3,2\ \text{s} = 32\ \text{s}
 $$
 
 $$
-t_max = 24 \cdot h \cdot t + t_r = 24 \cdot 5 \cdot 4\ \text{s} + 32\ \text{s} = \mathbf{512\ \text{s}}
+t_{max} = 24 \cdot h \cdot t + t_r = 24 \cdot 5 \cdot 4\ \text{s} + 32\ \text{s} = \mathbf{512\ \text{s}}
 $$
 
 &nbsp;
 
 kde:
-- $t_max$ ... maximální doba každohodinové kontroly h hnízd
+- $t_{max}$ ... maximální doba každohodinové kontroly h hnízd
 - $t_r$ ... doba pro potvrzení aktualizace referenční nulové hodnoty t tenzometrů
-- $t_min$ ... minimální doba každohodinové kontroly h hnízd
+- $t_{min}$ ... minimální doba každohodinové kontroly h hnízd
 - $t$ ... doba kontroly jednoho hnízda
 - $t_i$ ... doba inicializace
 - $t_v$ ... doba vzorkování
