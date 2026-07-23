@@ -98,12 +98,20 @@ Silová část systému bude pracovat s napětím 6 V, veškerá elektronika pak
 
 | Komponenta | Proud (typ) | Proud (max) | Spotřeba (typ) | Spotřeba (max) |
 |:---|:---:|:---:|:---:|:---:|
-| Dělič | 4,1 µA | 6,1 µA | 4,56 nAh | 6,78 nAh |
+| Dělič | 4,63 µA | 6,12 µA | 5,14 nAh | 6,8 nAh |
 | INA219 | 0,7 mA | 1 mA | 583 nAh | 833 nAh |
 | M (LPRun @ 1 MHz) | 120 µA | 390 µA | 133 nAh | 433 nAh |
 | **Celkem** | **0,824 mA** | **1,40 mA** | **0,721 µAh** | **1,27 µAh** |
 
 &nbsp;
+
+$$
+I_{typ} = \frac{U_{typ}}{R_1 + R_2} = \frac{6,8\ \text{V}}{1\ \text{M}\Omega + 470\ \text{k}\Omega} = mathbf{4,63\ \text{µA}}
+$$
+
+$$
+I_{max} = \frac{U_{max}}{R_1 + R_2} = \frac{9\ \text{V}}{1\ \text{M}\Omega + 470\ \text{k}\Omega} = mathbf{6,12\ \text{µA}}
+$$
 
 $$
 \tau = (R_1 \parallel R_2) \cdot C = (1\ \text{M}\Omega \parallel 470\ \text{k}\Omega) \cdot 10\ \text{nF} = 3,2\ \text{ms}
@@ -124,6 +132,10 @@ $$
 &nbsp;
 
 kde:
+- $I_{typ}$ ... typický proud děličem
+- $I_{max}$ ... maximální proud děličem
+- $U_{typ}$ ... typické napětí panelu
+- $U_{max}$ ... maximální napětí panelu
 - $t_{p,c}$ ... celková doba měření napětí na panelu
 - $t_{p,v}$ ... doba vzorkování napětí na panelu
 - $t_i$ ... doba inicializace děliče
@@ -389,9 +401,9 @@ U ostatních řídicích jednotek to bude po většinu dne velmi podobné — ze
 
 Po připojení napájení VCC k jednotlivým částem systému je nutné počkat na jejich ustálení. U obvodu INA219 se použije čekací doba 200 µs, zahrnující náběh napájení, stabilizaci obvodu a nabití blokovacího keramického kondenzátoru 100 nF mezi VCC a GND. Při 12bitovém měření s průměrováním 32 vzorků trvá vytvoření první hodnoty přibližně 17 ms (32 × 532 µs), při měření proudu s průměrováním 4 vzorků pak přibližně 2,1 ms. U obvodu MAX3485 se použije čekací doba 100 µs (náběh obvodu a nabití blokovacího kondenzátoru 100 nF mezi VCC a GND), u budiče DRV8838 pak 3 ms, což zahrnuje nabití elektrolytického kondenzátoru 47 µF mezi VM a GND, keramického 100 nF mezi VCC a GND a především ustálení interní nábojové pumpy. U obvodu HX711 bude po zapnutí napájení potřeba čekat přibližně 500 ms — dobu ustálení analogové části převodníku a dokončení prvního převodu. Po této době už lze odečítat stabilní hodnoty; při zvoleném režimu 10 SPS trvá jedna konverze přibližně 100 ms. Kromě posledního zmíněného obvodu nebude inicializační doba zahrnuta do výpočtu denní spotřeby systému.
 
-Před odpojením napájení VCC od jednotlivých částí systému je nutné přepsat výstupy (SCK, PH, EN, DI, DE, /RE) na logickou nulu, aby se zamezilo napájení přes piny, které k tomu nejsou určeny (tzv. leakage current). Dále je třeba vypnout periferie (I²C, UART, ADC) i jejich hodinový signál, který plýtvá energií, i když periferie právě nic nepřenáší. Po odpojení VCC je nutné všechny piny, včetně těch pro právě vypnuté periferie, přepnout do analogového režimu bez pull rezistoru. Stejný postup se použije i u vstupů pro koncové spínače: jakmile dvířka dosáhnou koncové polohy, přepnou se do analogového režimu bez pull rezistorů, čímž se eliminuje jejich klidový odběr.
+Před odpojením napájení VCC od jednotlivých částí systému je nutné přepsat výstupy (SCK, PH, EN, DI, DE, /RE) na logickou nulu, aby se zamezilo napájení přes piny, které k tomu nejsou určeny. Dále je třeba vypnout periferie (I²C, UART, ADC) i jejich hodinový signál, který plýtvá energií, i když periferie právě nic nepřenáší. Po odpojení VCC je nutné všechny piny, včetně těch pro právě vypnuté periferie, přepnout do analogového režimu bez pull rezistoru. Stejný postup se použije i u vstupů pro koncové spínače: jakmile dvířka dosáhnou koncové polohy, přepnou se do analogového režimu bez pull rezistorů, čímž se eliminuje jejich klidový odběr.
 
-Kvůli nízkopříkonové povaze systému bude nutné odpájet červenou Power LED diodu a softwarově odpojit všechny zelené User LED diody. Programátor ST-Link musí být za provozu hardwarově odpojen, proto je potřeba odpájet pájecí jumpery SB9, SB14, SB2 a SB3. U LoRa-E5 mini je navíc nutné přepnout piny PA2 a PA3, určené k ladění, do analogového režimu bez pull rezistoru. Pro programování lze pak programátor k deskám připojovat přes klasické Dupont kabely a u LoRa-E5 mini vrátit piny PA2 a PA3 do původního stavu. Zvláštní pozornost je třeba věnovat plovoucím pinům — nepoužívané piny musí být vždy v analogovém režimu bez pull rezistoru. Při nepoužívání rádia je nutné nastavit externí RF switch na logickou nulu; u řadičů bez rádia je zase potřeba v registrech napájení (PWR) aktivovat ultra-low-power režim (bit ULP) a vypnout fast wakeup.
+Kvůli nízkopříkonové povaze systému bude nutné odpájet červenou Power LED diodu a softwarově odpojit všechny zelené User LED diody. Programátor ST-Link musí být za provozu hardwarově odpojen, proto je potřeba odpájet pájecí jumpery SB9, SB14, SB2 a SB3. U LoRa-E5 mini je navíc nutné přepnout piny PA2 a PA3, určené k ladění, do analogového režimu bez pull rezistoru. Pro programování lze pak programátor k deskám připojovat přes klasické Dupont kabely a u LoRa-E5 mini vrátit piny PA2 a PA3 do původního stavu. Zvláštní pozornost je třeba věnovat plovoucím pinům — nepoužívané piny musí být vždy v analogovém režimu bez pull rezistoru. Do právě aktivních vstupů teče tzv. leakage current, kvůli jejich krátké aktivitě je ale zanedbatelný. Při nepoužívání rádia je nutné nastavit externí RF switch na logickou nulu; u řadičů bez rádia je zase potřeba v registrech napájení (PWR) aktivovat ultra-low-power režim (bit ULP) a vypnout fast wakeup.
 
 &nbsp;
 
@@ -426,7 +438,7 @@ MOSFET odpojovač bude tvořen dvěma P-MOS tranzistory zapojenými back-to-back
 
 Pro dosažení nízké klidové spotřeby budou jednotlivé části systému napájeny přes tranzistorové spínače — většina elektroniky totiž pracuje jen krátkodobě, při měření, komunikaci nebo pohybu dvířek, a trvalé napájení všech obvodů by způsobovalo zbytečný odběr energie z akumulátoru. Spínače budou konstruovány stejně jako MOSFET odpojovač, ale jen s jedním P-MOS tranzistorem a odpovídajícími pull-up a pull-down rezistory. Přes první z těchto spínačů bude M řídit napájení k děliči napětí, přes druhý k INA219, přes třetí k DRV8838 a čtvrtý bude napájet hlavní MAX3485 a zároveň všechny krabičky Kx. V každé krabičce Kx budou pak dva další spínače: první, ve výchozím stavu sepnutý, bude přes Mx napájet místní MAX3485 a HX711; druhý, ve výchozím stavu rozepnutý, bude napájet další krabičku Kx v řadě.
 
-K solárnímu panelu bude připojen vysokoimpedanční napěťový dělič tvořený metalizovanými rezistory 1 MΩ a 470 kΩ s tolerancí 1 %, přičemž paralelně k rezistoru R2 (470 kΩ) bude zapojen blokovací keramický kondenzátor 10 nF/50 V. Dělič bude sloužit k monitorování napětí panelu; naměřené hodnoty se do M přenesou přes ADC pin v analogovém režimu a pro zvýšení přesnosti bude provedena kalibrace, výsledek pak bude aritmetickým průměrem 16 vzorků. Vysoká impedance děliče zajišťuje jeho nízkou spotřebu. Modul proudového a napěťového senzoru INA219 bude v krabičce K zapojen mezi akumulátor a vstup VM pro napájení motoru přes H-bridge; jednou z jeho funkcí bude s 12bitovým rozlišením a průměrováním 32 vzorků monitorovat napětí akumulátoru.
+K solárnímu panelu bude připojen vysokoimpedanční napěťový dělič tvořený metalizovanými rezistory 1 MΩ a 470 kΩ s tolerancí 1 %, přičemž paralelně k rezistoru R2 (470 kΩ) bude zapojen keramický kondenzátor 10 nF/50 V, kvůli vysoké časové konstantě rezistorů děliče a interního vzorkovacího kondenzátoru M. Dělič bude sloužit k monitorování napětí panelu; naměřené hodnoty se do M přenesou přes ADC pin v analogovém režimu a pro zvýšení přesnosti bude provedena kalibrace, výsledek pak bude aritmetickým průměrem 16 vzorků. Vysoká impedance děliče zajišťuje jeho nízkou spotřebu. Modul proudového a napěťového senzoru INA219 bude v krabičce K zapojen mezi akumulátor a vstup VM pro napájení motoru přes H-bridge; jednou z jeho funkcí bude s 12bitovým rozlišením a průměrováním 32 vzorků monitorovat napětí akumulátoru.
 
 Na základě údajů z tohoto modulu a z napěťového děliče bude M přes sběrnici I²C, respektive přes ADC, vyhodnocovat stav akumulátoru a solárního panelu. Dostane-li se napětí akumulátoru nad limitní hodnotu (v létě 7,2 V, na jaře a na podzim 7,3 V, v zimě 7,5 V), M solární panel odpojí. Pokud napětí akumulátoru následně klesne o 250 mV po dobu 30 minut (tři po sobě jdoucí měření), M panel znovu připojí. Při kritickém vybití akumulátoru, kdy jeho napětí klesne na 5,75 V, přejde M do kritického režimu, ve kterém bude už jen kontrolovat napětí panelu a akumulátoru; k obnovení provozu dojde po dosažení 6,1 V. Během nedostatečného slunečního svitu nebo v noci, kdy je napětí panelu nižší než napětí akumulátoru, musí M zamezit vzniku zpětného proudu směrem do panelu jeho odpojením; kvůli nepřesnosti měření bude hladina pro odpojení, respektive opětovné připojení panelu zvýšena o 250 mV.
 
