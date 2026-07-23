@@ -329,18 +329,28 @@ P = U_{aku} \cdot I_{max} = 6,8\ \text{V} \cdot 1,2\ \text{A} = 8,16\ \text{W}
 $$
 
 $$
-\eta_{bias} = \frac{P}{P_p} = \frac{8,16\ \text{W}}{10\ \text{W}} = 0,816
+\eta_{bias} = \frac{P}{P_max} = \frac{8,16\ \text{W}}{10\ \text{W}} = 0,816
+$$
+
+**Příklad výpočtu pro léto, jih**
+
+$$
+E_{den} = \frac{E_{červen} + E_{červenec} + E_{srpen}}{\text{92 dní}} = \frac{0,7 + 0,8 + 0,9\ \text{kWh}}{92} \approx 26,1\ \text{Wh/den}
 $$
 
 $$
-P_{ef} = P_p \cdot \eta_{bias} \cdot \eta_{mos} \cdot \eta_{aku} = 10\ \text{W} \cdot 0,816 \cdot 0,97 \cdot 0,88 \approx \mathbf{6,97\ \text{W}}
+E_{aku} = E_{den} \cdot \eta_{bias} \cdot \eta_{mos} \cdot \eta_{aku} = 26,1\ \text{Wh/den} \cdot 0,816 \cdot 0,97 \cdot 0,88 \approx \mathbf{18,2\ \text{Wh/den}}
+$$
+
+$$
+Q_{aku} = \frac{E_{aku}}{U_{aku}} = \frac{18,2\ \text{Wh/den}}{6,8\ \text{V}} \approx \mathbf{2677\ \text{mAh/den}}
 $$
 
 &nbsp;
 
 kde:
 - $P_{ef}$ ... efektivní výkon panelu při plném osvitu
-- $P_p$ ... jmenovitý výkon panelu při plném osvitu
+- $P_max$ ... maximální výkon panelu při plném osvitu
 - $P$ ... dosažitelný výkon panelu při plném osvitu v pracovním bodě daném akumulátorem
 - $U_{aku}$ ... průměrné napětí akumulátoru
 - $I_{max}$ ... maximální proud panelu při plném osvitu
@@ -350,7 +360,7 @@ kde:
 
 &nbsp;
 
-*Poznámka: Pro stanovení doby plného osvitu fotovoltaického panelu byla využita data odpovídající podmínkám v Praze, která byla přepočítána pro svislou polohu a různé orientace panelu; pro přepočet Wh na mAh bylo použito průměrné napětí akumulátoru 6,8 V.*
+*Poznámka: Pro zjištění výkonu fotovoltaického panelu v lokalitě kurníku bylo využito nástroje PVGIS.*
 
 &nbsp;
 
@@ -368,7 +378,7 @@ kde:
 &nbsp;
 
 $$
-Q_{ztr} = Q_{aku} \cdot \frac{3\ \text{%}}{30} = 4\ \text{Ah} \cdot \frac{3\ \text{%}}{30} = \mathbf{4\ \text{mAh/den}}
+Q_{ztr} = Q_{aku} \cdot \frac{3\ \text{%}}{30 dní} = 4\ \text{Ah} \cdot \frac{3\ \text{%}}{30} = \mathbf{4\ \text{mAh/den}}
 $$
 
 &nbsp;
